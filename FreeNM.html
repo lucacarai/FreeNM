@@ -1,0 +1,1075 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f7f7f2"><meta name="description" content="Explore the dual construction of free nilpotent minimum algebras over finite bounded distributive lattices."><title>Free NM algebras dually</title><style>:root{font-family:Inter,"Segoe UI",sans-serif;font-size:14px;color:#2e4439;background:#f7f7f2;font-synthesis:none}html{scrollbar-gutter:stable}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button,select{cursor:pointer}button,select{border:1px solid #d6ddd2;border-radius:6px;background:#fffefa;color:#344d3e;padding:8px 11px}button:hover{background:#eaf0e5}button:disabled{opacity:.4;cursor:default}button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #709f8b;outline-offset:3px}[hidden]{display:none!important}.topbar{height:74px;background:#fffefa;border-bottom:1px solid #dce2d6;display:flex;align-items:center;justify-content:space-between;padding:0 32px;gap:20px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;font-size:21px;font-weight:650;letter-spacing:-.6px}.brand-mark{display:grid;place-items:center;width:33px;height:36px;border-radius:8px;background:#e8eee2;font-size:32px;font-weight:400}.file-actions{display:flex;align-items:center;gap:9px}#saved{font-size:11px;color:#788575;margin-right:8px}.dark{background:#2d5142;color:white;border-color:#2d5142}.dark:hover{background:#3e6653}main{max-width:1700px;margin:auto;padding:23px 32px 26px}.document-bar{display:flex;align-items:center;justify-content:flex-end;gap:16px;margin-bottom:18px}.document-tools{display:flex;align-items:center;gap:8px}.document-tools label{font-size:11px;color:#74826e;margin-right:3px}.document-tools #undo,.document-tools #redo{font-size:20px;padding:4px 10px}.workspace{display:grid;grid-template-columns:minmax(330px,.85fr) minmax(0,1.4fr);border:1px solid #d3dccd;border-radius:11px;overflow:hidden;background:#fffefa;box-shadow:0 5px 24px #2c452908}.panel{min-width:0}.input-panel{border-right:1px solid #d3dccd}.panel-heading{height:67px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;gap:10px}.panel-heading>div{display:flex;align-items:baseline;flex-wrap:wrap;gap:11px}h1,h2{margin:0;font-size:15px;font-weight:600;letter-spacing:-.2px}.count,.limit{color:#74836e;font-size:11px}.element-count{font-size:13px;font-weight:600;color:#365742;background:#eaf0e4;padding:4px 8px;border-radius:5px}.limit{white-space:nowrap;border:1px solid #dfe5d9;border-radius:4px;padding:4px 6px}.panel-heading button{font-size:11px;padding:6px 8px}.panel-heading .panel-actions{align-items:center;flex-wrap:nowrap;gap:7px;flex-shrink:0}.panel-tools{height:47px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;background:#f3f5ed;border-top:1px solid #e3e8db;border-bottom:1px solid #e1e7da}.tools{display:flex;align-items:center;gap:3px}.tools .tool-icon{width:19px;height:19px;vertical-align:middle;margin-right:3px}.tools button{border-color:transparent;padding:7px 9px;background:transparent;font-size:12px}.tools button[aria-pressed=true]{border-color:#c8d5be;background:#e3ecdc}.tools kbd{font:9px inherit;color:#84947d;margin-left:5px}.output-tools{padding:0 18px;gap:10px}.chain-limit-control{display:flex;align-items:center;gap:8px;min-width:0}.chain-limit-control label{font-size:11px;color:#65785c}.chain-limit-control #max-chain-length{font-size:12px;padding:5px 6px;width:58px;min-width:0;border:1px solid #d6ddd2;border-radius:5px;background:#fffefa;color:#344d3e}.chain-limit-control #max-chain-length:disabled{opacity:.5}.chain-limit-control input[aria-invalid=true]{border-color:#ac4a3b}.all-chain-lengths{display:flex;align-items:center;gap:4px;white-space:nowrap}.all-chain-lengths input{margin:0;accent-color:#426d54}.output-tools>span{font-size:11px;color:#74836d}.output-tools button{font-size:11px;padding:5px 8px;white-space:nowrap}.canvas-wrap{position:relative;height:clamp(390px,55vh,660px);overflow:hidden;background:#fafbf7}.canvas-wrap svg{width:100%;height:100%;display:block;touch-action:none;user-select:none;cursor:grab}body[data-tool=point] #input-canvas{cursor:crosshair}body[data-tool=order] #input-canvas{cursor:crosshair}.canvas-controls{display:flex;align-items:center;gap:13px;min-height:47px;padding:8px 13px;border-top:1px solid #e1e6d9}.canvas-controls label{display:flex;align-items:center;gap:5px;font-size:11px;white-space:nowrap;color:#6f7d68}.canvas-controls input{margin:0;accent-color:#426d54}.canvas-controls>button{padding:5px 7px;font-size:10px}.zoom{display:flex;margin-left:auto;border:1px solid #d9e0d2;border-radius:5px}.zoom button{border:0;padding:4px 8px;background:transparent;font-size:12px}.zoom button[data-fit]{font-size:10px}.edge{stroke:#80917a;stroke-width:1.8;pointer-events:none}.edge.active{stroke:#365c49;stroke-width:2.8}.edge-hit{stroke:transparent;stroke-width:16;cursor:pointer}.edge.selected{stroke:#254f3c;stroke-width:3.5}.point{outline:none;cursor:pointer}.point .hit{fill:transparent}.point .core{stroke:#536a50;stroke-width:1.6}.point .ring{fill:none;stroke:#406c53;stroke-width:2;opacity:0}.point .minimum-ring{fill:none;stroke:#294b3a;stroke-width:2.4;opacity:0}.point text{font:italic 14px Georgia,serif;fill:#4e6549;paint-order:stroke;stroke:#fafbf7;stroke-width:4px;stroke-linejoin:round;pointer-events:none}.point.dim{opacity:.85}.edge.dim{opacity:.85}.point.related .ring,.point.pinned .ring,.point.source .ring,.point:focus-visible .ring{opacity:1}.point.minimum .minimum-ring{opacity:1}.point:hover .core{stroke:#213d2a;stroke-width:2.4}.preview-line{stroke:#527b5d;stroke-width:2;stroke-dasharray:6 4}.empty{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;pointer-events:none;padding:36px;text-align:center;color:#687960;font-size:13px;line-height:1.7}.empty button{pointer-events:auto}.empty p{max-width:330px;background:#fafbf7;padding:18px}#output-notice.limit-error{background:#fafbf7ed;color:#98513f}.statusbar{display:flex;justify-content:space-between;gap:18px;padding:12px 3px;font-size:11px;color:#7a8871;min-height:41px}.statusbar .error{color:#ac4a3b}.statusbar>span:last-child{text-align:right;color:#8a9483;white-space:nowrap}.details-row{display:grid;grid-template-columns:1.1fr 1fr;border:1px solid #d9e0d1;border-radius:9px;background:#fffefa;overflow:hidden}.inspector,.legend{padding:17px 20px;min-width:0}.inspector{border-right:1px solid #dfe5d7}#inspector-content{height:110px;overflow:auto;overscroll-behavior:contain;overflow-anchor:none;scrollbar-gutter:stable}.section-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:24px;margin-bottom:9px}.section-heading h2{font-size:12px;color:#6f7f65;font-weight:600}.delete{color:#a15c49;font-size:10px;padding:4px 7px;border-color:#e3d9ce}.inspector p,.legend p{font-size:12px;color:#7b8773;line-height:1.7;margin:5px 0}.inspect-title{font-size:15px;color:#304f3c;margin:4px 0 9px;overflow-wrap:anywhere}.inspect-line{font-size:12px;color:#6c7c62;margin:5px 0;line-height:1.65;overflow-wrap:anywhere}.label-edit{display:flex;align-items:center;gap:10px;margin:7px 0}.label-edit label{font-size:11px;color:#78876c}.label-edit input{border:1px solid #d7dfcf;background:#fffefa;color:#344f3e;border-radius:5px;padding:5px 8px;max-width:230px;width:60%;font-size:12px}.hue-item{display:inline-flex;align-items:center;border:1px solid #dae2d1;border-radius:5px;overflow:hidden;background:#fbfcf7}.hue-item button{border:0;border-radius:0;font-size:11px;padding:6px 8px;background:transparent}.hue-item input[type=color]{width:25px;height:27px;padding:3px;border:0;background:transparent;cursor:pointer}.hue-item input::-webkit-color-swatch-wrapper{padding:1px}.hue-item input::-webkit-color-swatch{border:1px solid #0002;border-radius:50%}#hue-list{display:flex;flex-wrap:wrap;gap:7px;max-height:150px;overflow:auto}#input-canvas .point{cursor:grab}body[data-tool=order] #input-canvas .point{cursor:crosshair}body[data-tool=point] #input-canvas .point{cursor:pointer}
+@media(min-width:1600px){main{padding-top:30px}.canvas-wrap{height:62vh}}@media(max-width:1000px){main{padding:18px}.topbar{padding:0 18px}.workspace{grid-template-columns:minmax(300px,1fr) minmax(0,1.2fr)}.panel-heading{padding:0 13px}.panel-heading>div{gap:5px}.output-tools>span{max-width:180px}.statusbar>span:last-child{display:none}.document-tools label{display:none}.canvas-controls{gap:8px;padding:8px}.tools button{padding:7px}.tools kbd{display:none}}
+@media(max-width:720px){.workspace{grid-template-columns:1fr}.input-panel{border-right:0;border-bottom:1px solid #d3dccd}.canvas-wrap{height:410px}.details-row{grid-template-columns:1fr}.inspector{border-right:0;border-bottom:1px solid #dfe5d7}.document-tools{justify-content:flex-end;flex-wrap:wrap}.topbar{height:auto;min-height:66px;padding:14px 16px;gap:10px;flex-wrap:wrap}.brand{font-size:19px}#saved{display:none}main{padding:15px 12px}.file-actions button{font-size:12px;padding:7px 9px}.statusbar{line-height:1.6}.output-tools>span{max-width:none}}
+
+@media(max-width:400px){.output-tools{height:auto;min-height:47px;flex-wrap:wrap;padding:8px 12px;row-gap:7px}.chain-limit-control{gap:6px}}
+
+/* FreeNM keeps the editor's visual language and adds two construction stages. */
+main{max-width:2000px;padding-left:24px;padding-right:24px}
+.brand-mark{font-size:13px;font-weight:700;letter-spacing:-.5px}
+.document-bar{justify-content:space-between;flex-wrap:wrap}
+.panel-visibility{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;margin:0 0 12px;font-size:12px;color:#65785c}
+.panel-visibility>span{font-size:11px;color:#74826e}
+.panel-visibility label{display:flex;align-items:center;gap:5px;cursor:pointer}
+.panel-visibility input{margin:0;accent-color:#426d54}
+.output-heading{height:auto;min-height:67px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap;gap:8px 5px}
+.panel-heading.output-heading{padding-left:8px;padding-right:8px}
+.output-heading>.output-title{flex:1 1 380px;min-width:0;align-items:baseline;flex-wrap:wrap;gap:4px 4px}
+.output-title>.formula{flex:0 0 auto;word-spacing:-.1em}
+.output-title>.element-count{flex:0 0 auto;white-space:nowrap}
+.formula{font:400 18px/1.5 "Cambria Math",Cambria,"STIX Two Math",serif;letter-spacing:0;max-width:100%;font-kerning:normal}
+.formula .math-term{white-space:nowrap}
+.formula .math-variable{font-style:italic}
+.formula sub{font-size:.7em;line-height:0}
+.formula math{font-family:"Cambria Math",Cambria,"STIX Two Math",serif;font-size:1em}
+.output-heading>.parameters{display:flex;align-items:center;flex-wrap:wrap;gap:8px 6px;flex:0 0 auto}
+.parameter-control{display:flex;align-items:center;gap:3px}
+.parameter-control>label{font-size:11px;color:#526c56}
+.parameter-control .math{font-size:14px}
+.parameter-control>input{width:40px;min-width:0;padding:5px 3px;border:1px solid #d6ddd2;border-radius:5px;color:#344d3e;background:#fffefa;font-size:12px}
+.parameter-control>input:disabled{opacity:.55}
+.parameter-control>input[aria-invalid=true]{border-color:#ac4a3b}
+.parameter-all{display:flex;align-items:center;gap:3px;white-space:nowrap}
+.parameter-all input{margin:0;accent-color:#426d54}
+.intro{margin:0;font-size:12px;color:#74826e}
+.workspace{grid-template-columns:minmax(290px,.9fr) minmax(270px,1fr) minmax(320px,1.35fr)}
+.workspace.without-pairs{grid-template-columns:minmax(290px,.9fr) minmax(320px,1.35fr)}
+.workspace.without-output{grid-template-columns:minmax(290px,.9fr) minmax(270px,1fr)}
+.workspace.without-pairs.without-output{grid-template-columns:minmax(0,1fr)}
+.workspace.without-output .pairs-panel{border-right:0}
+.workspace.without-pairs.without-output .input-panel{border-right:0;border-bottom:0}
+.pairs-panel{border-right:1px solid #d3dccd}
+.panel-heading{padding:0 15px}
+.panel-heading>div{gap:8px}
+.math{font-family:"Cambria Math",Cambria,"STIX Two Math",serif;font-style:italic;font-weight:400}
+.math sup{font-size:11px}
+.construction-note{font-size:11px;color:#65785c;padding:0 14px;gap:8px}
+.construction-note .limit{font-size:10px}
+.canvas-wrap{height:clamp(430px,57vh,720px)}
+.point .half-fill{stroke:none;pointer-events:none}
+.point-backs{pointer-events:none}
+.point-back{fill:#fafbf7;stroke:none}
+.highlight-definitions{position:absolute;overflow:hidden;pointer-events:none}
+.point .ring,.point .minimum-ring{shape-rendering:geometricPrecision;vector-effect:non-scaling-stroke}
+.point.coordinate-inspection .ring,.point.coordinate-inspection .minimum-ring{opacity:0}
+.point.coordinate-left .ring{opacity:1;clip-path:url(#nm-highlight-left)}
+.point.coordinate-right .ring{opacity:1;clip-path:url(#nm-highlight-right)}
+.point.coordinate-left.coordinate-right .ring{clip-path:none}
+.diagonal-halo{fill:#f9df78;fill-opacity:.30;pointer-events:none}
+.diagonal-outline{fill:none;stroke:#c4ad43;stroke-width:1.4;pointer-events:none}
+.point.dim{opacity:.68}
+.edge.dim{opacity:.5}
+.empty.limit-error{background:#fafbf7ed;color:#98513f}
+.diagonal-key{display:flex;align-items:center;gap:7px}
+.diagonal-swatch{display:inline-block;flex:0 0 18px;width:18px;height:18px;border:1px solid #c4ad43;border-radius:50%;background:#f9df784d}
+.canvas-controls{gap:8px}
+@media(min-width:1600px){.canvas-wrap{height:62vh}}
+@media(max-width:1100px){
+  main{padding:16px}.workspace{grid-template-columns:minmax(260px,.85fr) minmax(280px,1fr)}
+  .pairs-panel{border-right:0}.output-panel{grid-column:1/-1;border-top:1px solid #d3dccd}
+  .output-panel .canvas-wrap{height:450px}.intro{display:none}
+  .workspace.without-pairs .output-panel{grid-column:auto;border-top:0}
+}
+@media(max-width:720px){
+  main{padding:15px 12px}.workspace{grid-template-columns:minmax(0,1fr)}
+  .pairs-panel{border-bottom:1px solid #d3dccd}.output-panel{grid-column:auto;border-top:0}
+  .canvas-wrap,.output-panel .canvas-wrap{height:410px}.document-tools{justify-content:flex-start}
+  .panel-heading{padding:0 13px}.document-bar{justify-content:flex-start}
+  .workspace.without-pairs,.workspace.without-output{grid-template-columns:minmax(0,1fr)}
+}
+</style></head>
+<body>
+<svg class="highlight-definitions" width="0" height="0" aria-hidden="true" focusable="false"><defs><clipPath id="nm-highlight-left" clipPathUnits="userSpaceOnUse"><rect x="-200000" y="-200000" width="200000" height="400000"/></clipPath><clipPath id="nm-highlight-right" clipPathUnits="userSpaceOnUse"><rect x="0" y="-200000" width="200000" height="400000"/></clipPath></defs></svg>
+<header class="topbar"><a class="brand" href="./FreeNM.html"><span aria-hidden="true" class="brand-mark">NM</span>Free NM algebras dually</a><div class="file-actions"><span id="saved" role="status">Saved on this device</span><button id="open">Open</button><button id="save" class="dark">Save file</button><input id="file" type="file" accept=".json,application/json" hidden></div></header>
+<main>
+  <div class="document-bar"><div class="document-tools"><label for="examples">Example</label><select id="examples"><option value="">Choose…</option><option value="boolean2">Powerset · 2 atoms</option><option value="boolean3">Powerset · 3 atoms</option><option value="chain2">Chain · 2 points</option><option value="chain3">Chain · 3 points</option><option value="chain">Chain · 4 points</option><option value="chain5">Chain · 5 points</option><option value="antichain">Antichain · 4 points</option></select><button id="blank">+ Blank</button><button id="undo" aria-label="Undo" title="Undo (Ctrl+Z)">↶</button><button id="redo" aria-label="Redo" title="Redo (Ctrl+Shift+Z)">↷</button><button id="clear-selection" disabled>Clear selection</button></div></div>
+  <div class="panel-visibility" role="group" aria-label="Visible diagrams"><span>Show</span><label><input id="show-pairs" type="checkbox" checked aria-controls="pairs-panel"> Second panel</label><label><input id="show-output" type="checkbox" checked aria-controls="output-panel"> Third panel</label></div>
+  <div id="workspace" class="workspace">
+    <section class="panel input-panel" aria-label="Input poset">
+      <div class="panel-heading"><div><h1>Input <span class="math">X</span></h1><span id="input-count" class="count"></span></div><div class="panel-actions"><button id="delete-poset" class="delete">Delete poset</button><button id="arrange">Arrange</button></div></div>
+      <div class="panel-tools"><div class="tools" role="toolbar" aria-label="Drawing tools"><button data-tool="move" aria-pressed="true" title="Move (V)">Move <kbd>V</kbd></button><button data-tool="point" aria-pressed="false" title="Point (N)">+ Point <kbd>N</kbd></button><button data-tool="order" aria-pressed="false" title="Order (E)">Order <kbd>E</kbd></button></div></div>
+      <div class="canvas-wrap"><svg id="input-canvas" viewBox="0 0 500 500" role="group" aria-label="Editable input Hasse diagram"><defs><pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#dce2d8"/></pattern></defs><rect class="canvas-bg" x="-200000" y="-200000" width="400000" height="400000" fill="url(#grid)"/><g class="edges"></g><g class="point-backs" aria-hidden="true"></g><g class="points"></g><g id="order-preview" pointer-events="none"></g></svg><div id="input-empty" class="empty" hidden><button id="add-first">+ Add a point</button></div></div>
+      <div class="canvas-controls"><label><input id="snap" type="checkbox"> Snap</label><label><input id="input-labels" type="checkbox" checked> Labels</label><div class="zoom" aria-label="Input zoom"><button data-zoom="input:out" aria-label="Zoom input out">−</button><button data-fit="input">Fit</button><button data-zoom="input:in" aria-label="Zoom input in">+</button></div><button data-export="input" title="Save input diagram as PNG">PNG</button></div>
+    </section>
+    <section id="pairs-panel" class="panel pairs-panel" aria-label="Comparable pair poset">
+      <div class="panel-heading"><div><h2 class="formula"><span class="math-term">(<math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>X</mi><mo>≤</mo></msup></math>, <math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>X</mi><mo>=</mo></msup></math>)</span></h2><span id="pairs-count" class="element-count" aria-live="polite"></span></div></div>
+      <div class="panel-tools construction-note" aria-hidden="true"></div>
+      <div class="canvas-wrap"><svg id="pairs-canvas" viewBox="0 0 500 500" role="group" aria-label="Hasse diagram of comparable pairs"><rect class="canvas-bg" x="-200000" y="-200000" width="400000" height="400000" fill="#fafbf7"/><g class="edges"></g><g class="point-backs" aria-hidden="true"></g><g class="points"></g></svg><div id="pairs-notice" class="empty" hidden><p id="pairs-message"></p></div></div>
+      <div class="canvas-controls"><label><input id="pair-labels" type="checkbox"> Pair labels</label><div class="zoom" aria-label="Pair poset zoom"><button data-zoom="pairs:out" aria-label="Zoom pairs out">−</button><button data-fit="pairs">Fit</button><button data-zoom="pairs:in" aria-label="Zoom pairs in">+</button></div><button data-export="pairs" title="Save pair diagram as PNG">PNG</button></div>
+    </section>
+    <section id="output-panel" class="panel output-panel" aria-label="Chain poset">
+      <div class="panel-heading output-heading"><div class="output-title"><h2 id="output-title" class="formula" aria-live="polite"></h2><span id="output-count" class="element-count" aria-live="polite"></span></div><div class="parameters" role="group" aria-label="Chain size parameters">
+    <div class="parameter-control"><label for="parameter-m"><span class="math">m</span></label><input id="parameter-m" type="text" min="0" step="1" value="All" disabled aria-label="m: maximum size of any chain"><label class="parameter-all"><input id="all-m" type="checkbox" checked> All</label></div>
+    <div class="parameter-control"><label for="parameter-n"><span class="math">n</span></label><input id="parameter-n" type="text" min="0" step="1" value="All" disabled aria-label="n: maximum size of a chain containing a diagonal pair"><label class="parameter-all"><input id="all-n" type="checkbox" checked> All</label></div>
+  </div></div>
+      <div class="panel-tools construction-note" aria-hidden="true"></div>
+      <div class="canvas-wrap"><svg id="output-canvas" viewBox="0 0 700 500" role="group" aria-label="Root system of nonempty chains of comparable pairs"><rect class="canvas-bg" x="-200000" y="-200000" width="400000" height="400000" fill="#fafbf7"/><g class="edges"></g><g class="point-backs" aria-hidden="true"></g><g class="points"></g></svg><div id="output-notice" class="empty" hidden><p id="output-message"></p></div></div>
+      <div class="canvas-controls"><label><input id="chain-labels" type="checkbox"> Chain labels</label><div class="zoom" aria-label="Chain poset zoom"><button data-zoom="output:out" aria-label="Zoom chains out">−</button><button data-fit="output">Fit</button><button data-zoom="output:in" aria-label="Zoom chains in">+</button></div><button data-export="output" title="Save chain diagram as PNG">PNG</button></div>
+    </section>
+  </div>
+  <div class="statusbar"><span id="status" role="status" aria-live="polite">Drag points to move. Hover to inspect; click to pin.</span><span>Higher means greater · Drag empty space to pan</span></div>
+  <div class="details-row"><section class="inspector"><div class="section-heading"><h2>Inspector</h2><button id="delete" class="delete" disabled>Delete selection</button></div><div id="inspector-content"><p>Hover or select a point.</p></div></section><section class="legend"><div class="section-heading"><h2>Base hues</h2><span id="hue-count" class="count"></span></div><div id="hue-list"></div><p class="diagonal-key"><span aria-hidden="true" class="diagonal-swatch"></span>Yellow circles mark X<sup>=</sup> and chains contained in X<sup>=</sup>.</p></section></div>
+</main>
+<script type="module">const OUTPUT_LIMIT = 300;
+const GAP = 44;
+const copy = value => JSON.parse(JSON.stringify(value));
+const PALETTE = ['#d85555', '#397bd5', '#ebc33f', '#37a58c', '#ac68c6', '#e58b40', '#6670bc', '#a17c58'];
+const CHAIN_HUE_DECAY = .15;
+
+function closure(model) {
+  const ids = model.nodes.map(n => n.id), index = new Map(ids.map((id, i) => [id, i]));
+  const r = ids.map((_, i) => ids.map((__, j) => i === j));
+  for (const [a, b] of model.edges) r[index.get(a)][index.get(b)] = true;
+  for (let k = 0; k < ids.length; k++) for (let i = 0; i < ids.length; i++) if (r[i][k]) {
+    for (let j = 0; j < ids.length; j++) r[i][j] ||= r[k][j];
+  }
+  return { ids, r, index, le: (a, b) => r[index.get(a)]?.[index.get(b)] ?? false };
+}
+
+function covers(model, order = closure(model)) {
+  const { ids, r } = order;
+  return ids.flatMap((a, i) => ids.flatMap((b, j) => i !== j && r[i][j] && !ids.some((_, k) => k !== i && k !== j && r[i][k] && r[k][j]) ? [[a, b]] : []));
+}
+
+// j is irreducible iff some q is above all strict predecessors of j, but not j.
+// This includes every minimal point unless the poset has a least element.
+function irreducibles(model, order = closure(model)) {
+  return order.ids.filter(j => {
+    const below = order.ids.filter(x => x !== j && order.le(x, j));
+    return order.ids.some(q => !order.le(j, q) && below.every(x => order.le(x, q)));
+  });
+}
+
+function freshPigment(index) {
+  if (index < PALETTE.length) return PALETTE[index];
+  const h = ((index - PALETTE.length) * 137.508 + 18) % 360, s = .56, l = .51;
+  const a = s * Math.min(l, 1 - l);
+  return '#' + [0, 8, 4].map(n => {
+    const k = (n + h / 30) % 12;
+    return Math.round(255 * (l - a * Math.max(-1, Math.min(k - 3, 9 - k, 1)))).toString(16).padStart(2, '0');
+  }).join('');
+}
+
+function withPigments(model) {
+  const next = copy(model), generators = new Set(irreducibles(next));
+  const used = new Set(next.nodes.map(n => n.pigment).filter(Boolean));
+  let index = 0;
+  for (const n of next.nodes) if (generators.has(n.id) && !n.pigment) {
+    let pigment;
+    do { pigment = freshPigment(index++); } while (used.has(pigment));
+    n.pigment = pigment; used.add(pigment);
+  }
+  return next;
+}
+
+// Weighted pigment concentrations in a simplified Kubelka–Munk reflectance model.
+// Mix the complete set once, rather than recursively mixing pairwise results.
+function mixPigments(hexes, weights = hexes.map(() => 1)) {
+  if (!hexes.length) return '#ffffff';
+  if (weights.length !== hexes.length || weights.some(w => !Number.isFinite(w) || w < 0) || !weights.some(w => w > 0)) throw Error('Pigment weights must be nonnegative, with a positive total.');
+  if (hexes.length === 1) return hexes[0];
+  const totalWeight = weights.reduce((sum, w) => sum + w, 0);
+  return '#' + [1, 3, 5].map(offset => {
+    const ks = hexes.reduce((sum, hex, i) => {
+      const v = parseInt(hex.slice(offset, offset + 2), 16) / 255;
+      const r = Math.max(.0001, v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4);
+      return sum + weights[i] * (1 - r) ** 2 / (2 * r);
+    }, 0) / totalWeight;
+    const r = 1 / (1 + ks + Math.sqrt(ks * ks + 2 * ks));
+    const v = r <= .0031308 ? 12.92 * r : 1.055 * r ** (1 / 2.4) - .055;
+    return Math.round(Math.max(0, Math.min(1, v)) * 255).toString(16).padStart(2, '0');
+  }).join('');
+}
+
+function coloring(model, order = closure(model)) {
+  const generators = irreducibles(model, order), byId = new Map(model.nodes.map(n => [n.id, n]));
+  const hues = new Map(order.ids.map(id => [id, generators.filter(j => order.le(j, id))]));
+  const weights = new Map(order.ids.map(id => {
+    const members = hues.get(id), depths = new Map();
+    function depth(j) {
+      if (!depths.has(j)) depths.set(j, Math.max(0, ...members.filter(k => k !== j && order.le(j, k)).map(k => 1 + depth(k))));
+      return depths.get(j);
+    }
+    // Only comparable generators suppress each other. In a powerset all
+    // generators are atoms, so every weight remains 1, preserving its colors.
+    return [id, members.map(j => CHAIN_HUE_DECAY ** depth(j))];
+  }));
+  const fills = new Map(order.ids.map(id => [id, mixPigments(hues.get(id).map(j => byId.get(j).pigment), weights.get(id))]));
+  return { generators, hues, weights, fills };
+}
+
+// Every chain has a unique minimum. Count by that minimum using ALL strict
+// comparisons, not only covers; this includes chains that skip levels.
+function posetHeight(model, order = closure(model)) {
+  const memo = new Map();
+  function height(id) {
+    if (!memo.has(id)) memo.set(id, 1 + Math.max(0, ...order.ids.filter(q => q !== id && order.le(id, q)).map(height)));
+    return memo.get(id);
+  }
+  return Math.max(0, ...order.ids.map(height));
+}
+
+function chainCount(model, limit = OUTPUT_LIMIT, order = closure(model)) {
+  if (model.nodes.length > limit) return limit + 1;
+  const maxLength = Math.min(model.maxChainLength ?? model.nodes.length, model.nodes.length);
+  const memo = Array.from({ length: maxLength + 1 }, () => new Map());
+  function count(id, remaining) {
+    if (!memo[remaining].has(id)) {
+      let total = 1;
+      if (remaining > 1) for (const q of order.ids) if (q !== id && order.le(id, q)) {
+        total = Math.min(limit + 1, total + count(q, remaining - 1));
+        if (total > limit) break;
+      }
+      memo[remaining].set(id, total);
+    }
+    return memo[remaining].get(id);
+  }
+  let total = 0;
+  for (const id of order.ids) { total += count(id, maxLength); if (total > limit) return limit + 1; }
+  return total;
+}
+
+function rootSystem(model, limit = OUTPUT_LIMIT, order = closure(model)) {
+  const count = chainCount(model, limit, order);
+  if (count > limit) return { count, exceeded: true, nodes: [], edges: [] };
+  const nodes = [], edges = [], sorted = [...model.nodes].sort((a, b) => a.x - b.x || a.id.localeCompare(b.id));
+  const maxLength = model.maxChainLength ?? model.nodes.length;
+  function extend(chain, parent = null) {
+    const id = JSON.stringify(chain), node = { id, chain, minimum: chain[0], parent, x: 0, y: 0 };
+    nodes.push(node);
+    if (parent) edges.push([id, parent]);
+    if (chain.length >= maxLength) return;
+    for (const n of sorted) if (n.id !== chain[0] && order.le(n.id, chain[0])) extend([n.id, ...chain], id);
+  }
+  for (const n of sorted) extend([n.id]);
+  return layoutRootSystem({ count, exceeded: false, nodes, edges });
+}
+
+function layoutRootSystem(forest, { width = 700, height = 500, spacing = 56 } = {}) {
+  if (!forest.nodes.length) return forest;
+  const nodes = forest.nodes.map(n => ({ ...n, x: 0, y: (n.chain.length - 1) * 86 }));
+  const children = new Map(nodes.map(n => [n.id, []]));
+  for (const n of nodes) if (n.parent) children.get(n.parent).push(n);
+  const components = nodes.filter(n => !n.parent).map(root => {
+    let cursor = 0; const members = [];
+    function place(n) {
+      members.push(n); const below = children.get(n.id);
+      if (!below.length) { n.x = cursor; cursor += spacing; }
+      else { below.forEach(place); n.x = (below[0].x + below.at(-1).x) / 2; }
+    }
+    place(root);
+    return { members, highlighted: members.some(n => n.diagonal), width: cursor, height: Math.max(...members.map(n => n.y)) + 44 };
+  });
+  // Yellow components come first, then size. Stable ties retain input order.
+  components.sort((a, b) => Number(b.highlighted) - Number(a.highlighted) || b.members.length - a.members.length);
+  function pack(budget) {
+    const rows = []; let row = { items: [], width: 0, height: 0 };
+    for (const component of components) {
+      const gap = row.items.length ? 35 : 0;
+      if (row.items.length && row.width + gap + component.width > budget) {
+        rows.push(row); row = { items: [], width: 0, height: 0 };
+      }
+      const x = row.width + (row.items.length ? 35 : 0);
+      row.items.push({ component, x }); row.width = x + component.width; row.height = Math.max(row.height, component.height);
+    }
+    rows.push(row);
+    const w = Math.max(...rows.map(r => r.width)), h = rows.reduce((sum, r) => sum + r.height, 0) + (rows.length - 1) * 65;
+    return { rows, scale: Math.min(Math.max(1, width - 80) / w, Math.max(1, height - 100) / h) };
+  }
+  const single = pack(Infinity), budgets = new Set([Math.max(...components.map(c => c.width)), Math.max(1, width - 80) / .55]);
+  let prefix = 0;
+  for (const c of components) { prefix += (prefix ? 35 : 0) + c.width; budgets.add(prefix); }
+  let best = single;
+  for (const budget of budgets) {
+    const candidate = pack(budget);
+    if (candidate.scale > best.scale + .001 || (Math.abs(candidate.scale - best.scale) <= .001 && candidate.rows.length < best.rows.length)) best = candidate;
+  }
+  // Prefer a shared horizontal baseline if points remain reasonably readable,
+  // even when wrapping would make them somewhat larger.
+  const layout = single.scale >= Math.min(.55, best.scale * .7) ? single : best;
+  let y = 0;
+  for (const row of layout.rows) {
+    for (const { component, x } of row.items) for (const n of component.members) { n.x += x; n.y += y; }
+    y += row.height + 65;
+  }
+  return { ...forest, nodes };
+}
+
+function enforceLayout(model) {
+  const next = copy(model), byId = new Map(next.nodes.map(n => [n.id, n])), done = new Set();
+  const uppers = new Map(next.nodes.map(n => [n.id, []]));
+  next.edges.forEach(([a, b]) => uppers.get(a).push(b));
+  function place(id) {
+    if (done.has(id)) return byId.get(id).y;
+    const n = byId.get(id);
+    for (const b of uppers.get(id)) n.y = Math.max(n.y, place(b) + GAP);
+    done.add(id); return n.y;
+  }
+  next.nodes.forEach(n => place(n.id)); return next;
+}
+
+function constrainPosition(model, id, x, y, snap = false) {
+  const byId = new Map(model.nodes.map(n => [n.id, n]));
+  let min = -Infinity, max = Infinity;
+  for (const [a, b] of model.edges) {
+    if (a === id) min = Math.max(min, byId.get(b).y + GAP);
+    if (b === id) max = Math.min(max, byId.get(a).y - GAP);
+  }
+  const step = snap ? 25 : 1;
+  return { x: Math.round(x / step) * step, y: Math.max(min, Math.min(max, Math.round(y / step) * step)) };
+}
+
+function addRelation(model, a, b) {
+  const order = closure(model);
+  if (!order.index.has(a) || !order.index.has(b)) throw Error('Unknown point.');
+  if (a === b) throw Error('Choose two different points.');
+  if (order.le(b, a)) throw Error('This relation would create a cycle.');
+  if (order.le(a, b)) throw Error('This relation is already implied.');
+  const next = copy(model); next.edges.push([a, b]); next.edges = covers(next);
+  return withPigments(enforceLayout(next));
+}
+
+function removeNode(model, id) {
+  const order = closure(model), next = copy(model);
+  next.nodes = next.nodes.filter(n => n.id !== id);
+  next.edges = next.nodes.flatMap(a => next.nodes.flatMap(b => a.id !== b.id && order.le(a.id, b.id) ? [[a.id, b.id]] : []));
+  next.edges = covers(next); return withPigments(next);
+}
+
+function arrange(model) {
+  const next = copy(model), order = closure(next), memo = new Map();
+  function rank(id) {
+    if (!memo.has(id)) memo.set(id, Math.max(0, ...order.ids.filter(q => q !== id && order.le(q, id)).map(q => rank(q) + 1)));
+    return memo.get(id);
+  }
+  const height = Math.max(0, ...order.ids.map(rank));
+  for (let level = 0; level <= height; level++) {
+    const row = next.nodes.filter(n => rank(n.id) === level).sort((a, b) => a.x - b.x);
+    row.forEach((n, i) => { n.x = 250 + (i - (row.length - 1) / 2) * 85; n.y = 60 + (height - level) * 110; });
+  }
+  return next;
+}
+
+const empty = () => ({ format: 'free-nm-studio', version: 1, title: 'Untitled poset', m: null, n: null, lastM: 1, lastN: 1, nodes: [], edges: [] });
+
+function naturalOrAll(value, name) {
+  if (value === null || (Number.isSafeInteger(value) && value >= 0)) return value;
+  throw Error(`Parameter ${name} must be a nonnegative whole number or All.`);
+}
+
+function example(kind = 'boolean2') {
+  const m = empty();
+  if (kind.startsWith('boolean')) {
+    const size = Number(kind.slice(7)), total = 2 ** size;
+    m.title = `Powerset of a ${size}-element set`;
+    for (let mask = 0; mask < total; mask++) {
+      const members = Array.from({ length: size }, (_, i) => i).filter(i => mask & 2 ** i);
+      m.nodes.push({ id: `p${mask}`, label: members.length ? `{${members.map(i => String.fromCharCode(97 + i)).join(',')}}` : '∅', x: mask * 40, y: 0, pigment: null });
+      for (let bit = 0; bit < size; bit++) if (!(mask & 2 ** bit)) m.edges.push([`p${mask}`, `p${mask | 2 ** bit}`]);
+    }
+  } else {
+    const size = ({ chain2: 2, chain3: 3, chain5: 5, chain6: 6, chain8: 8 })[kind] ?? 4;
+    m.title = kind === 'antichain' ? 'Four-point antichain' : `${size}-point chain`;
+    m.nodes = Array.from({ length: size }, (_, i) => ({ id: `p${i}`, label: String.fromCharCode(97 + i), x: i * 80, y: 0, pigment: null }));
+    if (kind !== 'antichain') m.edges = m.nodes.slice(1).map((n, i) => [m.nodes[i].id, n.id]);
+  }
+  return withPigments(arrange(m));
+}
+
+function validate(input) {
+  if (!input || !['free-nm-studio', 'godel-studio', 'poset-studio'].includes(input.format) || input.version !== 1 || !Array.isArray(input.nodes) || !Array.isArray(input.edges)) throw Error('Choose a Free NM, Free Godel, or Poset Studio JSON file.');
+  // Diagonal pairs already exceed the middle diagram's limit beyond this size.
+  if (input.nodes.length > OUTPUT_LIMIT) throw Error('More than 300 input points exceed the pair diagram limit.');
+  const ids = new Set();
+  const next = empty(); next.title = typeof input.title === 'string' ? input.title.slice(0, 100) : next.title;
+  const keepPigments = input.format !== 'poset-studio';
+  if (input.format === 'free-nm-studio') {
+    next.m = naturalOrAll(input.m ?? null, 'm');
+    next.n = naturalOrAll(input.n ?? null, 'n');
+    next.lastM = naturalOrAll(input.lastM ?? next.m ?? 1, 'm');
+    next.lastN = naturalOrAll(input.lastN ?? next.n ?? 1, 'n');
+    if (next.lastM === null || next.lastN === null) throw Error('Remembered parameter values must be nonnegative whole numbers.');
+  }
+  for (const n of input.nodes) {
+    if (!n || typeof n.id !== 'string' || !n.id || n.id.length > 150 || ids.has(n.id) || typeof n.label !== 'string' || n.label.length > 80 || !Number.isFinite(n.x) || !Number.isFinite(n.y) || Math.abs(n.x) > 100000 || Math.abs(n.y) > 100000 || (keepPigments && n.pigment != null && !/^#[0-9a-f]{6}$/i.test(n.pigment))) throw Error('The file contains an invalid or duplicate point.');
+    ids.add(n.id); next.nodes.push({ id: n.id, label: n.label, x: n.x, y: n.y, pigment: keepPigments ? n.pigment ?? null : null });
+  }
+  for (const e of input.edges) {
+    if (!Array.isArray(e) || e.length !== 2 || !ids.has(e[0]) || !ids.has(e[1]) || e[0] === e[1]) throw Error('The file contains an invalid relation.');
+    next.edges.push([...e]);
+  }
+  const order = closure(next);
+  if (order.r.some((row, i) => row.some((v, j) => i !== j && v && order.r[j][i]))) throw Error('The relations contain a cycle.');
+  next.edges = covers(next, order);
+  return withPigments(enforceLayout(next));
+}
+
+// Coordinate order: move the left endpoint up or the right endpoint down.
+// A cover changes precisely one coordinate along a cover of X.
+function pairPoset(model, limit = OUTPUT_LIMIT, order = closure(model)) {
+  let count = 0;
+  for (const x of order.ids) for (const y of order.ids) if (order.le(x, y)) count++;
+  if (count > limit) return { count, exceeded: true, nodes: [], edges: [] };
+  const id = (x, y) => JSON.stringify([x, y]);
+  const nodes = [];
+  for (const x of model.nodes) for (const y of model.nodes) if (order.le(x.id, y.id)) {
+    nodes.push({ id: id(x.id, y.id), left: x.id, right: y.id, diagonal: x.id === y.id, x: x.x + y.x, y: 0 });
+  }
+  const inputCovers = covers(model, order), edges = [];
+  for (const [a, b] of inputCovers) for (const z of order.ids) {
+    if (order.le(b, z)) edges.push([id(a, z), id(b, z)]);
+    if (order.le(z, a)) edges.push([id(z, b), id(z, a)]);
+  }
+  return { ...arrange({ nodes, edges }), count, exceeded: false };
+}
+
+function layoutPairPoset(pairs, { width = 700, height = 500, spacing = 85 } = {}) {
+  if (!pairs.nodes.length) return pairs;
+  const nodes = pairs.nodes.map(q => ({ ...q, layoutX: q.layoutX ?? q.x }));
+  const byId = new Map(nodes.map(q => [q.id, q]));
+  const uppers = new Map(nodes.map(q => [q.id, []])), neighbors = new Map(nodes.map(q => [q.id, []]));
+  for (const [a, b] of pairs.edges) {
+    uppers.get(a).push(b); neighbors.get(a).push(b); neighbors.get(b).push(a);
+  }
+  const depths = new Map();
+  function depth(id) {
+    if (!depths.has(id)) depths.set(id, Math.max(0, ...uppers.get(id).map(q => depth(q) + 1)));
+    return depths.get(id);
+  }
+  const visited = new Set(), components = [];
+  for (const start of [...nodes].sort((a, b) => a.layoutX - b.layoutX)) {
+    if (visited.has(start.id)) continue;
+    const members = [], pending = [start.id]; visited.add(start.id);
+    while (pending.length) {
+      const id = pending.pop(); members.push(byId.get(id));
+      for (const q of neighbors.get(id)) if (!visited.has(q)) { visited.add(q); pending.push(q); }
+    }
+    const rows = new Map();
+    for (const q of members) {
+      const level = depth(q.id);
+      if (!rows.has(level)) rows.set(level, []);
+      rows.get(level).push(q);
+    }
+    const componentWidth = Math.max(...[...rows.values()].map(row => row.length * spacing));
+    for (const [level, row] of rows) {
+      row.sort((a, b) => a.layoutX - b.layoutX || a.id.localeCompare(b.id));
+      row.forEach((q, i) => { q.x = (componentWidth - row.length * spacing) / 2 + (i + .5) * spacing; q.y = level * 110; });
+    }
+    components.push({ members, width: componentWidth, height: Math.max(...members.map(q => q.y)) + 44 });
+  }
+  components.sort((a, b) => b.members.length - a.members.length);
+  function pack(budget) {
+    const rows = []; let row = { items: [], width: 0, height: 0 };
+    for (const component of components) {
+      if (row.items.length && row.width + 35 + component.width > budget) {
+        rows.push(row); row = { items: [], width: 0, height: 0 };
+      }
+      const x = row.width + (row.items.length ? 35 : 0);
+      row.items.push({ component, x }); row.width = x + component.width; row.height = Math.max(row.height, component.height);
+    }
+    rows.push(row);
+    const w = Math.max(...rows.map(r => r.width)), h = rows.reduce((sum, r) => sum + r.height, 0) + (rows.length - 1) * 65;
+    return { rows, scale: Math.min(Math.max(1, width - 80) / w, Math.max(1, height - 100) / h) };
+  }
+  const single = pack(Infinity), budgets = new Set([Math.max(...components.map(c => c.width))]);
+  let prefix = 0, best = single;
+  for (const component of components) { prefix += (prefix ? 35 : 0) + component.width; budgets.add(prefix); }
+  for (const budget of budgets) {
+    const candidate = pack(budget);
+    if (candidate.scale > best.scale + .001 || (Math.abs(candidate.scale - best.scale) <= .001 && candidate.rows.length < best.rows.length)) best = candidate;
+  }
+  // Prefer one common horizontal row of diagonal points whenever readable.
+  const layout = single.scale >= Math.min(.55, best.scale * .7) ? single : best;
+  let y = 0;
+  for (const row of layout.rows) {
+    for (const { component, x } of row.items) for (const q of component.members) { q.x += x; q.y += y; }
+    y += row.height + 65;
+  }
+  return { ...pairs, nodes };
+}
+
+function nmConstruction(model, limit = OUTPUT_LIMIT) {
+  const m = naturalOrAll(model.m ?? null, 'm'), n = naturalOrAll(model.n ?? null, 'n');
+  const order = closure(model), pairs = pairPoset(model, limit, order);
+  const exceeded = () => ({ count: limit + 1, exceeded: true, nodes: [], edges: [] });
+  // If m includes singletons, every pair appears as a singleton chain.
+  if (pairs.exceeded && m !== 0) return { pairs, forest: exceeded() };
+  let candidates = pairs.nodes;
+  if (pairs.exceeded) {
+    // When m=0 only diagonal-rooted trees remain. Build just diagonal roots
+    // for n<=1; larger n can use endpoint comparisons without pair closure.
+    candidates = [];
+    for (const x of model.nodes) for (const y of model.nodes) {
+      if (!order.le(x.id, y.id) || (n !== null && n <= 1 && x.id !== y.id)) continue;
+      candidates.push({ id: JSON.stringify([x.id, y.id]), left: x.id, right: y.id, diagonal: x.id === y.id, x: x.x + y.x, y: 0 });
+    }
+  }
+  const sorted = [...candidates].sort((a, b) => a.x - b.x || a.id.localeCompare(b.id));
+  const boundFor = root => Math.min(candidates.length, root.diagonal ? Math.max(m ?? Infinity, n ?? Infinity) : m ?? Infinity);
+  const below = (a, b) => a.id !== b.id && order.le(a.left, b.left) && order.le(b.right, a.right);
+  // A diagonal pair is maximal, so a chain meets the diagonal iff its last
+  // pair is diagonal. A single size bound therefore applies to each tree.
+  const memo = new Map();
+  function countBelow(root, remaining) {
+    if (!memo.has(remaining)) memo.set(remaining, new Map());
+    const level = memo.get(remaining);
+    if (!level.has(root.id)) {
+      let count = 1;
+      if (remaining > 1) for (const q of sorted) if (below(q, root)) {
+        count = Math.min(limit + 1, count + countBelow(q, remaining - 1));
+        if (count > limit) break;
+      }
+      level.set(root.id, count);
+    }
+    return level.get(root.id);
+  }
+  let count = 0;
+  for (const root of sorted) {
+    const bound = boundFor(root);
+    if (bound) count += countBelow(root, bound);
+    if (count > limit) return { pairs, forest: exceeded() };
+  }
+  const nodes = [], edges = [];
+  function extend(chain, bottom, bound, diagonalRoot, parent = null) {
+    const id = JSON.stringify(chain);
+    nodes.push({ id, chain, minimum: bottom.id, parent, diagonal: diagonalRoot && chain.length === 1, x: 0, y: 0 });
+    if (parent) edges.push([id, parent]);
+    if (chain.length >= bound) return;
+    for (const q of sorted) if (below(q, bottom)) extend([q.id, ...chain], q, bound, diagonalRoot, id);
+  }
+  for (const root of sorted) {
+    const bound = boundFor(root);
+    if (bound) extend([root.id], root, bound, root.diagonal);
+  }
+  const forest = layoutRootSystem({ count, exceeded: false, nodes, edges });
+  if (pairs.exceeded) {
+    const used = new Set(nodes.map(q => q.minimum));
+    pairs.references = candidates.filter(q => used.has(q.id));
+  }
+  return { pairs, forest };
+}
+
+
+const $ = id => document.getElementById(id), NS = 'http://www.w3.org/2000/svg';
+const canvases = { input: $('input-canvas'), pairs: $('pairs-canvas'), output: $('output-canvas') };
+const views = { pairs: { x: 0, y: 0, w: 500, h: 500 }, input: { x: 0, y: 0, w: 500, h: 500 }, output: { x: 0, y: 0, w: 700, h: 500 } };
+const storageKey = 'free-nm-studio-v1';
+const visibilityKey = 'free-nm-visibility-v1';
+const panelVisibility = { pairs: true, output: true };
+try {
+  const saved = JSON.parse(localStorage.getItem(visibilityKey) || '{}');
+  for (const key of ['pairs', 'output']) if (typeof saved?.[key] === 'boolean') panelVisibility[key] = saved[key];
+} catch { /* Use the default view when browser settings are unavailable. */ }
+let model = example(), order, colors, pairs, forest, undo = [], redo = [], tool = 'move';
+let selected = null, hover = null, source = null, gesture = null, startupError = '', exporting = false;
+let outputWidth = 0, outputHeight = 0;
+let pairsWidth = 0, pairsHeight = 0;
+try { const saved = localStorage.getItem(storageKey); if (saved) model = validate(JSON.parse(saved)); }
+catch { startupError = 'The saved drawing could not be opened. Use Open to load a file.'; }
+
+function svgEl(tag, attrs = {}, text) {
+  const n = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+  if (text !== undefined) n.textContent = text;
+  return n;
+}
+function html(tag, className, text) {
+  const n = document.createElement(tag); if (className) n.className = className;
+  if (text !== undefined) n.textContent = text;
+  return n;
+}
+const inputNode = id => model.nodes.find(n => n.id === id);
+const outputNode = id => forest.nodes.find(n => n.id === id);
+const label = id => inputNode(id)?.label || id;
+const pairNode = id => pairs.nodes.find(n => n.id === id) || pairs.references?.find(n => n.id === id);
+const pairText = id => { const n = pairNode(id); return n ? `(${label(n.left)}, ${label(n.right)})` : id; };
+const chainText = chain => '[' + chain.map(pairText).join(' < ') + ']';
+const info = () => hover || (selected?.type !== 'edge' ? selected : null);
+
+function status(text, error = false) { $('status').textContent = text; $('status').className = error ? 'error' : ''; }
+function persist() {
+  try { localStorage.setItem(storageKey, JSON.stringify(model)); $('saved').textContent = 'Saved on this device'; }
+  catch { $('saved').textContent = 'Use Save file to keep this drawing'; }
+}
+function rebuild() {
+  order = closure(model); colors = coloring(model, order); ({ pairs, forest } = nmConstruction(model));
+  layoutPairs();
+  layoutOutput();
+}
+function layoutPairs() {
+  if (!panelVisibility.pairs) return;
+  pairsWidth = canvases.pairs.clientWidth; pairsHeight = canvases.pairs.clientHeight;
+  const spacing = $('pair-labels').checked ? Math.max(85, ...pairs.nodes.map(n => pairText(n.id).length * 7.5 + 35)) : 85;
+  pairs = layoutPairPoset(pairs, { width: pairsWidth, height: pairsHeight, spacing });
+}
+function layoutOutput() {
+  if (!panelVisibility.output) return;
+  outputWidth = canvases.output.clientWidth; outputHeight = canvases.output.clientHeight;
+  const spacing = $('chain-labels').checked ? Math.max(56, ...forest.nodes.map(n => chainText(n.chain).length * 7.5 + 24)) : 56;
+  forest = layoutRootSystem(forest, { width: outputWidth, height: outputHeight, spacing });
+}
+function resizeOutput() {
+  const pairsChanged = panelVisibility.pairs && canvases.pairs.clientWidth > 0 && canvases.pairs.clientHeight > 0 && (canvases.pairs.clientWidth !== pairsWidth || canvases.pairs.clientHeight !== pairsHeight);
+  const outputChanged = panelVisibility.output && canvases.output.clientWidth > 0 && canvases.output.clientHeight > 0 && (canvases.output.clientWidth !== outputWidth || canvases.output.clientHeight !== outputHeight);
+  if (!pairsChanged && !outputChanged) return;
+  if ((pairsChanged && gesture?.panel === 'pairs') || (outputChanged && gesture?.panel === 'output')) cancelGesture();
+  if (pairsChanged) { layoutPairs(); drawPanel('pairs'); fit('pairs'); }
+  if (outputChanged) { layoutOutput(); drawPanel('output'); fit('output'); }
+  refreshInteraction();
+}
+function commit(next, text = '', fitInput = false) {
+  next = withPigments(next);
+  if (JSON.stringify(next) === JSON.stringify(model)) return;
+  undo.push(copy(model)); if (undo.length > 100) undo.shift(); redo = []; model = next;
+  hover = null;
+  if (selected?.panel === 'input' && selected.type !== 'edge' && !inputNode(selected.id)) selected = null;
+  if (selected && selected.panel !== 'input') selected = null;
+  source = null; persist(); rebuild(); render(); fit('pairs'); fit('output'); if (fitInput) fit('input');
+  if (text) status(text);
+}
+function history(back) {
+  const from = back ? undo : redo, to = back ? redo : undo; if (!from.length) return;
+  cancelGesture(); to.push(copy(model)); model = from.pop(); selected = hover = source = null;
+  persist(); rebuild(); render(); fit('input'); fit('pairs'); fit('output'); status(back ? 'Edit undone.' : 'Edit restored.');
+}
+
+function updateView(panel) {
+  const v = views[panel]; canvases[panel].setAttribute('viewBox', `${v.x} ${v.y} ${v.w} ${v.h}`);
+}
+function points(panel) { return panel === 'input' ? model.nodes : panel === 'pairs' ? pairs.nodes : forest.nodes; }
+function fit(panel) {
+  if (panel !== 'input' && !panelVisibility[panel]) return;
+  const nodes = points(panel), svg = canvases[panel], ratio = Math.max(.1, svg.clientWidth / Math.max(1, svg.clientHeight));
+  if (!nodes.length) { views[panel] = { x: 0, y: 0, w: 500 * ratio, h: 500 }; updateView(panel); return; }
+  let minX = Math.min(...nodes.map(n => n.x)), maxX = Math.max(...nodes.map(n => n.x));
+  let minY = Math.min(...nodes.map(n => n.y)), maxY = Math.max(...nodes.map(n => n.y));
+  const box = svg.querySelector('.points').getBBox();
+  minX = Math.min(minX, box.x); maxX = Math.max(maxX, box.x + box.width);
+  minY = Math.min(minY, box.y); maxY = Math.max(maxY, box.y + box.height);
+  let w = Math.max(panel === 'input' ? 300 : 380, maxX - minX + 80), h = Math.max(320, maxY - minY + 100);
+  if (w / h < ratio) w = h * ratio; else h = w / ratio;
+  views[panel] = { x: (minX + maxX - w) / 2, y: (minY + maxY - h) / 2, w, h }; updateView(panel);
+}
+function position(event, panel) {
+  return new DOMPoint(event.clientX, event.clientY).matrixTransform(canvases[panel].getScreenCTM().inverse());
+}
+function zoom(panel, factor, at = null) {
+  const v = views[panel], w = v.w * factor, h = v.h * factor;
+  if (w < 65 || w > 100000) return;
+  const p = at || { x: v.x + v.w / 2, y: v.y + v.h / 2 };
+  views[panel] = { x: p.x - (p.x - v.x) * factor, y: p.y - (p.y - v.y) * factor, w, h }; updateView(panel);
+}
+
+function drawPanel(panel) {
+  const svg = canvases[panel], nodes = points(panel), byId = new Map(nodes.map(n => [n.id, n]));
+  const edgeLayer = svg.querySelector('.edges'), backLayer = svg.querySelector('.point-backs'), pointLayer = svg.querySelector('.points');
+  edgeLayer.replaceChildren(); backLayer.replaceChildren(); pointLayer.replaceChildren();
+  const edges = panel === 'input' ? model.edges : panel === 'pairs' ? pairs.edges : forest.edges;
+  for (const [a, b] of edges) {
+    const n = byId.get(a), m = byId.get(b), attrs = { x1: n.x, y1: n.y, x2: m.x, y2: m.y };
+    const line = svgEl('line', { ...attrs, class: 'edge', 'data-a': a, 'data-b': b }); edgeLayer.append(line);
+    if (panel === 'input') {
+      const hit = svgEl('line', { ...attrs, class: 'edge-hit', role: 'button', tabindex: 0, 'aria-label': `Cover ${label(a)} < ${label(b)}`, 'data-a': a, 'data-b': b });
+      const choose = () => { if (tool !== 'move') return; selected = { panel, type: 'edge', a, b }; hover = source = null; refreshInteraction(); status('Delete removes the selected cover.'); };
+      hit.addEventListener('click', e => { e.stopPropagation(); choose(); });
+      hit.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); choose(); } });
+      edgeLayer.append(hit);
+    }
+  }
+  for (const n of nodes) {
+    // Keep this backing outside the point group so fading never exposes edges.
+    backLayer.append(svgEl('circle', { cx: n.x, cy: n.y, r: 10.3, class: 'point-back' }));
+    const pair = panel === 'input' ? null : pairNode(panel === 'pairs' ? n.id : n.minimum);
+    const text = panel === 'input' ? n.label : panel === 'pairs' ? pairText(n.id) : chainText(n.chain);
+    const group = svgEl('g', { class: 'point', transform: `translate(${n.x} ${n.y})`, 'data-id': n.id, role: 'button', tabindex: 0, 'aria-label': `${panel === 'input' ? 'Point' : panel === 'pairs' ? 'Pair' : 'Chain'} ${text}${n.diagonal ? ', diagonal' : ''}` });
+    group.append(svgEl('title', {}, text), svgEl('circle', { r: 27, class: 'hit' }));
+    if (n.diagonal) group.append(svgEl('circle', { r: 19, class: 'diagonal-halo' }), svgEl('circle', { r: 19, class: 'diagonal-outline' }));
+    group.append(svgEl('circle', { r: 23, class: 'ring' }), svgEl('circle', { r: 27, class: 'minimum-ring' }));
+    const left = colors.fills.get(pair ? pair.left : n.id), right = pair ? colors.fills.get(pair.right) : left;
+    if (left === right) group.append(svgEl('circle', { r: 9.5, fill: left, class: 'core' }));
+    else {
+      group.append(svgEl('circle', { r: 9.5, fill: left, class: 'half-fill' }), svgEl('path', { d: 'M 0 -9.5 A 9.5 9.5 0 0 1 0 9.5 Z', fill: right, class: 'half-fill' }), svgEl('circle', { r: 9.5, fill: 'none', class: 'core' }));
+    }
+    if ((panel === 'input' && $('input-labels').checked) || (panel === 'pairs' && $('pair-labels').checked) || (panel === 'output' && $('chain-labels').checked)) {
+      group.append(svgEl('text', { x: 17, y: -23 }, text));
+    }
+    group.addEventListener('pointerenter', () => { if (!gesture && !(panel === 'input' && tool === 'order' && source)) setHover({ panel, id: n.id }); });
+    group.addEventListener('pointerleave', () => { if (!gesture) setHover(null); });
+    group.addEventListener('focus', () => { if (!gesture) setHover({ panel, id: n.id }); });
+    group.addEventListener('blur', () => { if (!gesture) setHover(null); });
+    group.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(panel, n.id); } });
+    group.addEventListener('pointerdown', e => startPointGesture(e, panel, n.id));
+    pointLayer.append(group);
+  }
+}
+
+function renderOutputTitle() {
+  const title = $('output-title'), { m, n } = model;
+  const text = value => document.createTextNode(value);
+  const x = superscript => {
+    // Use the math font's script metrics and glyphs for X's superscript.
+    const mathNS = 'http://www.w3.org/1998/Math/MathML';
+    const term = document.createElementNS(mathNS, 'math'), power = document.createElementNS(mathNS, 'msup');
+    const variable = document.createElementNS(mathNS, 'mi'), exponent = document.createElementNS(mathNS, 'mo');
+    variable.textContent = 'X'; exponent.textContent = superscript;
+    power.append(variable, exponent); term.append(power); return term;
+  };
+  const cc = key => {
+    const term = html('span', 'math-term', 'CC');
+    if (model[key] !== null) term.append(html('sub', '', String(model[key])));
+    term.append(text('('), x('\u2264'), text(')')); return term;
+  };
+  const marked = symbol => { const term = html('span', 'math-term', symbol); term.append(x('=')); return term; };
+  title.replaceChildren(text('('));
+  if (m === 0 && n === 0) {
+    title.append(text('\u2205, \u2205)')); return;
+  }
+  if (m === null || (n !== null && n <= m)) title.append(cc('m'));
+  else if (m === 0) {
+    if (n !== null) title.append(cc('n'), text(' \u2229 '));
+    title.append(marked('\u2662'));
+  } else {
+    title.append(cc('m'), text(' \u222a '));
+    if (n !== null) title.append(text('('), cc('n'), text(' \u2229 '));
+    title.append(marked('\u2662'));
+    if (n !== null) title.append(text(')'));
+  }
+  title.append(text(', '), marked('\u25a1'), text(')'));
+}
+
+function render() {
+  renderOutputTitle();
+  for (const key of ['m', 'n']) {
+    const all = model[key] === null, field = $('parameter-' + key);
+    $('all-' + key).checked = all;
+    field.setAttribute('type', all ? 'text' : 'number'); field.disabled = all;
+    field.value = all ? 'All' : String(model[key]); field.setAttribute('aria-invalid', 'false');
+  }
+  $('input-count').textContent = `${model.nodes.length} point${model.nodes.length === 1 ? '' : 's'}`;
+  $('pairs-count').textContent = `${pairs.count} element${pairs.count === 1 ? '' : 's'}`;
+  $('pairs-count').style.color = pairs.exceeded ? '#a05640' : '';
+  $('pairs-notice').hidden = !pairs.exceeded && !!model.nodes.length;
+  $('pairs-notice').classList.toggle('limit-error', pairs.exceeded);
+  $('pairs-message').textContent = pairs.exceeded ? 'This input produces more than 300 pairs. Remove input points or order relations to display the complete pair poset.' : 'Add points to construct comparable pairs.';
+  $('output-count').textContent = forest.exceeded ? 'More than 300 elements' : `${forest.count} element${forest.count === 1 ? '' : 's'}`;
+  $('output-count').style.color = forest.exceeded ? '#a05640' : '';
+  $('undo').disabled = !undo.length; $('redo').disabled = !redo.length;
+  $('delete-poset').disabled = !model.nodes.length;
+  $('input-empty').hidden = !!model.nodes.length;
+  $('output-notice').hidden = !forest.exceeded && forest.count > 0;
+  $('output-notice').classList.toggle('limit-error', forest.exceeded);
+  $('output-message').textContent = forest.exceeded ? 'These parameters produce more than 300 points. Lower m or n, or simplify the input, to display the complete chain poset.' : model.nodes.length ? 'No nonempty chains satisfy these parameters.' : 'Add points to construct the root system.';
+  document.querySelectorAll('[data-export]').forEach(b => b.disabled = exporting || !points(b.dataset.export).length);
+  drawPanel('input'); drawPanel('pairs'); drawPanel('output'); drawLegend(); refreshInteraction();
+}
+function setHover(value) {
+  if (hover?.panel === value?.panel && hover?.id === value?.id) return;
+  hover = value; refreshInteraction();
+}
+function refreshInteraction() {
+  const active = info(), inputs = new Set(), pairMembers = new Set(), outputPath = new Set();
+  let minimum = null;
+  if (active?.panel === 'input' && inputNode(active.id)) {
+    inputs.add(active.id);
+    for (const n of [...pairs.nodes, ...(pairs.references || [])]) if (n.left === active.id || n.right === active.id) pairMembers.add(n.id);
+  }
+  if (active?.panel === 'pairs' && pairNode(active.id)) pairMembers.add(active.id);
+  if (active?.panel === 'output') {
+    const chain = outputNode(active.id)?.chain;
+    if (chain) { chain.forEach(id => pairMembers.add(id)); minimum = chain[0]; for (let i = 0; i < chain.length; i++) outputPath.add(JSON.stringify(chain.slice(i))); }
+  }
+  if (active?.panel === 'output') {
+    const pair = pairNode(minimum);
+    if (pair) { inputs.add(pair.left); inputs.add(pair.right); }
+  } else if (active?.panel === 'pairs') for (const id of pairMembers) {
+    const n = pairNode(id); inputs.add(n.left); inputs.add(n.right);
+  }
+  const relatedTo = (panel, id) => {
+    if (panel === 'input') return inputs.has(id);
+    if (panel === 'pairs') return pairMembers.has(id);
+    if (active?.panel === 'output') return outputPath.has(id);
+    const node = outputNode(id);
+    if (active?.panel === 'pairs') return node?.minimum === active.id;
+    return pairMembers.has(node?.minimum);
+  };
+  for (const [panel, svg] of Object.entries(canvases)) {
+    for (const g of svg.querySelectorAll('.point')) {
+      const id = g.dataset.id;
+      g.classList.toggle('related', !!active && !!relatedTo(panel, id));
+      g.classList.toggle('dim', !!active && !relatedTo(panel, id));
+      g.classList.toggle('minimum', panel === 'pairs' && !!active && id === minimum);
+      g.classList.toggle('pinned', selected?.panel === panel && selected.id === id);
+      g.classList.toggle('source', panel === 'input' && source === id);
+      // Clip the existing circle instead of joining independently drawn arcs.
+      const coordinateInspection = active?.panel === 'input' && panel !== 'input';
+      const pair = coordinateInspection ? pairNode(panel === 'pairs' ? id : outputNode(id)?.minimum) : null;
+      g.classList.toggle('coordinate-inspection', coordinateInspection);
+      g.classList.toggle('coordinate-left', !!pair && pair.left === active.id);
+      g.classList.toggle('coordinate-right', !!pair && pair.right === active.id);
+    }
+    for (const line of svg.querySelectorAll('.edge')) {
+      const a = line.dataset.a, b = line.dataset.b, related = relatedTo(panel, a) && relatedTo(panel, b);
+      const inputFromOutput = active?.panel === 'output' && panel === 'input';
+      const highlightEdges = !!active && !(active.panel === 'input' && panel !== 'input') && !inputFromOutput;
+      line.classList.toggle('dim', active?.panel === 'input' || inputFromOutput || (highlightEdges && !related));
+      line.classList.toggle('active', highlightEdges && !!related);
+      line.classList.toggle('selected', panel === 'input' && !inputFromOutput && selected?.type === 'edge' && selected.a === a && selected.b === b);
+    }
+  }
+  $('clear-selection').disabled = !selected && !source;
+  $('delete').disabled = !selected || selected.panel !== 'input';
+  drawInspector(active);
+}
+
+function drawInspector(active) {
+  const box = $('inspector-content');
+  // Do not interrupt typing when pointer/focus events refresh the highlights.
+  if (box.contains(document.activeElement) && document.activeElement.tagName === 'INPUT' && active?.panel === 'input' && document.activeElement.dataset.id === active.id) return;
+  box.replaceChildren();
+  if (!active) {
+    if (selected?.type === 'edge') box.append(html('div', 'inspect-title', `${label(selected.a)} < ${label(selected.b)}`), html('p', '', 'Selected cover relation.'));
+    else box.append(html('p', '', 'Hover or select a point.'));
+    return;
+  }
+  const n = active.panel === 'input' ? inputNode(active.id) : active.panel === 'pairs' ? pairNode(active.id) : outputNode(active.id); if (!n) return;
+  const minimum = active.panel === 'input' ? n.id : n.minimum;
+  box.append(html('div', 'inspect-title', active.panel === 'input' ? label(n.id) : active.panel === 'pairs' ? pairText(n.id) : chainText(n.chain)));
+  if (active.panel === 'input') {
+    if (selected?.panel === 'input' && selected.id === n.id && !hover) {
+      const row = html('div', 'label-edit'), lab = html('label', '', 'Label'), input = html('input');
+      lab.htmlFor = 'point-label'; input.id = 'point-label'; input.dataset.id = n.id; input.value = n.label; input.maxLength = 80;
+      input.addEventListener('change', () => { const next = copy(model); next.nodes.find(q => q.id === n.id).label = input.value.trim() || n.label; commit(next, 'Point renamed.'); });
+      input.addEventListener('keydown', e => { if (e.key === 'Enter') input.blur(); }); row.append(lab, input); box.append(row);
+    }
+  } else if (active.panel === 'pairs') {
+    box.append(html('div', 'inspect-line', `Left coordinate: ${label(n.left)} · Right coordinate: ${label(n.right)}`));
+    box.append(html('div', 'inspect-line', n.diagonal ? 'In X⁼ · diagonal pair · maximal point' : 'Off the diagonal'));
+  } else {
+    box.append(html('div', 'inspect-line', `Least pair: ${pairText(minimum)} · Chain size: ${n.chain.length}`));
+    if (n.parent) box.append(html('div', 'inspect-line', `Upper cover: ${chainText(outputNode(n.parent).chain)}`));
+    else box.append(html('div', 'inspect-line', 'Singleton chain · maximal point'));
+    if (n.diagonal) box.append(html('div', 'inspect-line', 'Entirely contained in X⁼'));
+  }
+
+}
+function drawLegend() {
+  const list = $('hue-list'); list.replaceChildren(); $('hue-count').textContent = `${colors.generators.length} hues`;
+  for (const id of colors.generators) {
+    const item = html('div', 'hue-item'), color = html('input'), button = html('button', '', label(id));
+    color.type = 'color'; color.value = inputNode(id).pigment; color.setAttribute('aria-label', `Base hue introduced at ${label(id)}`); color.title = `Change hue at ${label(id)}`;
+    color.addEventListener('change', () => {
+      if (model.nodes.some(n => n.id !== id && n.pigment === color.value)) { color.value = inputNode(id).pigment; status('Choose a hue different from the other base hues.', true); return; }
+      const next = copy(model); next.nodes.find(n => n.id === id).pigment = color.value; commit(next, 'Base hue changed.');
+    });
+    button.setAttribute('aria-label', `Select hue point ${label(id)}`); button.onclick = () => { hover = null; selected = { panel: 'input', id }; refreshInteraction(); };
+    item.append(color, button); list.append(item);
+  }
+  if (!colors.generators.length) list.append(html('p', '', model.nodes.length ? 'No base hues. The least point is white.' : 'Add points to assign base hues.'));
+}
+
+function activate(panel, id) {
+  hover = null;
+  if (panel === 'input' && tool === 'order') {
+    if (!source) { source = id; selected = { panel, id }; refreshInteraction(); status(`Lower point: ${label(id)}. Choose an upper point.`); return; }
+    try { const next = addRelation(model, source, id); selected = { panel, id }; commit(next, 'Relation added.', true); }
+    catch (error) { status(error.message, true); refreshInteraction(); }
+  } else { selected = { panel, id }; refreshInteraction(); }
+}
+function setTool(next) {
+  cancelGesture(); tool = next; source = null; hover = null; document.body.dataset.tool = next;
+  document.querySelectorAll('[data-tool]').forEach(b => b.setAttribute('aria-pressed', b.dataset.tool === next));
+  $('order-preview').replaceChildren(); refreshInteraction();
+  status({ move: 'Drag points to move. Hover to inspect; click to pin.', point: 'Click empty space to add a point.', order: 'Connect the lower point to the upper point by clicking or dragging.' }[next]);
+}
+function addPoint(x, y) {
+  if (model.nodes.length >= OUTPUT_LIMIT) { status('The input limit is 300 points.', true); return; }
+  const next = copy(model), step = $('snap').checked ? 25 : 1;
+  let i = 0, name; do { name = i < 26 ? String.fromCharCode(97 + i) : `p${i + 1}`; i++; } while (next.nodes.some(n => n.label === name));
+  const id = crypto.randomUUID();
+  next.nodes.push({ id, label: name, x: Math.round(x / step) * step, y: Math.round(y / step) * step, pigment: null });
+  selected = { panel: 'input', id }; commit(next, `Point ${name} added.`);
+}
+function deleteSelection() {
+  if (selected?.panel !== 'input') return;
+  let next;
+  if (selected.type === 'edge') { next = copy(model); next.edges = next.edges.filter(([a, b]) => a !== selected.a || b !== selected.b); next.edges = covers(next); }
+  else next = removeNode(model, selected.id);
+  selected = hover = null; commit(next, 'Selection deleted.');
+}
+function clearSelection() { cancelGesture(); selected = hover = source = null; $('order-preview').replaceChildren(); refreshInteraction(); }
+
+function applyPanelVisibility(refit = true) {
+  cancelGesture();
+  for (const panel of ['pairs', 'output']) {
+    $(panel + '-panel').hidden = !panelVisibility[panel];
+    $('show-' + panel).checked = panelVisibility[panel];
+    $('workspace').classList.toggle('without-' + panel, !panelVisibility[panel]);
+  }
+  if (hover && hover.panel !== 'input' && !panelVisibility[hover.panel]) hover = null;
+  if (selected && selected.panel !== 'input' && !panelVisibility[selected.panel]) selected = null;
+  if (refit) requestAnimationFrame(() => {
+    layoutPairs(); layoutOutput();
+    for (const panel of ['pairs', 'output']) if (panelVisibility[panel]) drawPanel(panel);
+    refreshInteraction(); fit('input'); fit('pairs'); fit('output');
+  });
+}
+
+function startPointGesture(e, panel, id) {
+  if (e.button !== 0) return;
+  e.preventDefault(); e.stopPropagation();
+  const p = position(e, panel), n = (panel === 'input' ? inputNode(id) : panel === 'pairs' ? pairNode(id) : outputNode(id));
+  gesture = { panel, id, kind: panel === 'input' && tool === 'order' ? 'order' : panel === 'input' && tool === 'move' ? 'move' : 'choose', pointer: e.pointerId, px: e.clientX, py: e.clientY, dx: p.x - n.x, dy: p.y - n.y, start: panel === 'input' && tool === 'move' ? copy(model) : null, moved: false };
+  canvases[panel].setPointerCapture(e.pointerId);
+}
+function pointUnder(e, panel) {
+  const g = document.elementFromPoint(e.clientX, e.clientY)?.closest('.point');
+  return g && canvases[panel].contains(g) ? g.dataset.id : null;
+}
+function preview(end, target) {
+  const layer = $('order-preview'); layer.replaceChildren(); if (!source) return;
+  const n = inputNode(source), q = target ? inputNode(target) : end;
+  if (n && q) layer.append(svgEl('line', { x1: n.x, y1: n.y, x2: q.x, y2: q.y, class: 'preview-line' }));
+}
+function cancelGesture() {
+  if (!gesture) return;
+  const g = gesture; gesture = null;
+  if (g.kind === 'move' && g.moved) { model = g.start; drawPanel('input'); }
+  if (canvases[g.panel].hasPointerCapture(g.pointer)) canvases[g.panel].releasePointerCapture(g.pointer);
+  $('order-preview').replaceChildren();
+}
+for (const [panel, svg] of Object.entries(canvases)) {
+  svg.addEventListener('pointerdown', e => {
+    if (e.button !== 0 || e.target.closest('.point') || e.target.closest('.edge-hit')) return;
+    if (panel === 'input' && tool === 'point') { const p = position(e, panel); addPoint(p.x, p.y); return; }
+    gesture = { panel, kind: 'pan', pointer: e.pointerId, px: e.clientX, py: e.clientY, view: { ...views[panel] }, moved: false };
+    svg.setPointerCapture(e.pointerId);
+  });
+  svg.addEventListener('pointermove', e => {
+    if (!gesture) { if (panel === 'input' && tool === 'order' && source) preview(position(e, panel), pointUnder(e, panel)); return; }
+    const g = gesture; if (g.panel !== panel || g.pointer !== e.pointerId) return;
+    if (!g.moved && Math.hypot(e.clientX - g.px, e.clientY - g.py) < 4) return;
+    g.moved = true; hover = null;
+    if (g.kind === 'move') {
+      const p = position(e, panel), n = inputNode(g.id), next = constrainPosition(model, g.id, p.x - g.dx, p.y - g.dy, $('snap').checked);
+      Object.assign(n, next); selected = { panel, id: g.id }; drawPanel('input'); refreshInteraction();
+    } else if (g.kind === 'order') { source = g.id; refreshInteraction(); preview(position(e, panel), pointUnder(e, panel)); }
+    else if (g.kind === 'pan') {
+      const matrix = svg.getScreenCTM();
+      views[panel] = { ...g.view, x: g.view.x - (e.clientX - g.px) / matrix.a, y: g.view.y - (e.clientY - g.py) / matrix.d }; updateView(panel);
+    }
+  });
+  svg.addEventListener('pointerup', e => {
+    const g = gesture; if (!g || g.pointer !== e.pointerId || g.panel !== panel) return;
+    const target = pointUnder(e, panel); gesture = null;
+    if (svg.hasPointerCapture(e.pointerId)) svg.releasePointerCapture(e.pointerId);
+    $('order-preview').replaceChildren();
+    if (g.kind === 'move' && g.moved) {
+      if (JSON.stringify(model) !== JSON.stringify(g.start)) { undo.push(g.start); if (undo.length > 100) undo.shift(); redo = []; persist(); rebuild(); render(); fit('pairs'); fit('output'); }
+      else refreshInteraction();
+    } else if (g.kind === 'order' && g.moved) {
+      if (target && target !== g.id) { source = g.id; activate(panel, target); }
+      else { source = null; refreshInteraction(); status('Connection cancelled.'); }
+    } else if (g.id && !g.moved) activate(panel, g.id);
+    else if (g.kind === 'pan' && !g.moved) clearSelection();
+  });
+  svg.addEventListener('pointercancel', () => { cancelGesture(); source = null; refreshInteraction(); });
+  svg.addEventListener('lostpointercapture', () => { if (gesture?.panel === panel) { cancelGesture(); source = null; refreshInteraction(); } });
+  svg.addEventListener('pointerleave', () => { if (!gesture) setHover(null); });
+  svg.addEventListener('wheel', e => { e.preventDefault(); zoom(panel, e.deltaY > 0 ? 1.12 : 1 / 1.12, position(e, panel)); }, { passive: false });
+}
+
+function fileName(suffix) { return (model.title.replace(/[^a-z0-9-]+/gi, '-').replace(/^-|-$/g, '').slice(0, 60) || 'poset') + suffix; }
+function saveBlob(blob, name) {
+  const url = URL.createObjectURL(blob), a = html('a'); a.href = url; a.download = name; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+function download() { saveBlob(new Blob([JSON.stringify(model, null, 2)], { type: 'application/json' }), fileName('.json')); status('File saved.'); }
+async function downloadPng(panel) {
+  if (exporting || !points(panel).length) return;
+  exporting = true; document.querySelectorAll('[data-export]').forEach(b => b.disabled = true);
+  let url;
+  try {
+    const svg = canvases[panel], box = svg.querySelector('.points').getBBox();
+    const bounds = { x: box.x - 30, y: box.y - 30, width: Math.ceil(box.width + 60), height: Math.ceil(box.height + 60) };
+    const clone = svg.cloneNode(true); clone.setAttribute('xmlns', NS); clone.setAttribute('viewBox', `${bounds.x} ${bounds.y} ${bounds.width} ${bounds.height}`); clone.setAttribute('width', bounds.width); clone.setAttribute('height', bounds.height);
+    clone.querySelectorAll('defs, .canvas-bg, .point-backs, .hit, .ring, .minimum-ring, .edge-hit, #order-preview, title').forEach(n => n.remove());
+    clone.querySelectorAll('.point').forEach(n => n.setAttribute('class', 'point')); clone.querySelectorAll('.edge').forEach(n => n.setAttribute('class', 'edge'));
+    const style = svgEl('style', {}, '.diagonal-halo{fill:#f9df78;fill-opacity:.30}.diagonal-outline{fill:none;stroke:#c4ad43;stroke-width:1.4}.half-fill{stroke:none}.edge{stroke:#80917a;stroke-width:1.8}.core{stroke:#536a50;stroke-width:1.6}.point text{font:italic 14px Georgia,serif;fill:#4e6549;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}');
+    clone.prepend(style, svgEl('rect', { ...bounds, fill: '#ffffff' }));
+    url = URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(clone)], { type: 'image/svg+xml;charset=utf-8' }));
+    const image = new Image(); await new Promise((resolve, reject) => { image.onload = resolve; image.onerror = () => reject(Error('Could not render the PNG.')); image.src = url; });
+    const scale = Math.min(2, 4096 / bounds.width, 4096 / bounds.height), canvas = document.createElement('canvas');
+    canvas.width = Math.max(1, Math.ceil(bounds.width * scale)); canvas.height = Math.max(1, Math.ceil(bounds.height * scale));
+    canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
+    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png')); if (!blob) throw Error('Could not create the PNG.');
+    saveBlob(blob, fileName(panel === 'input' ? '-input.png' : panel === 'pairs' ? '-pairs.png' : '-chains.png')); status('PNG saved.');
+  } catch (error) { status(error.message, true); }
+  finally { if (url) URL.revokeObjectURL(url); exporting = false; document.querySelectorAll('[data-export]').forEach(b => b.disabled = !points(b.dataset.export).length); }
+}
+
+document.querySelectorAll('[data-tool]').forEach(b => b.onclick = () => setTool(b.dataset.tool));
+document.querySelectorAll('[data-fit]').forEach(b => b.onclick = () => fit(b.dataset.fit));
+document.querySelectorAll('[data-zoom]').forEach(b => b.onclick = () => { const [panel, dir] = b.dataset.zoom.split(':'); zoom(panel, dir === 'in' ? .8 : 1.25); });
+document.querySelectorAll('[data-export]').forEach(b => b.onclick = () => downloadPng(b.dataset.export));
+for (const panel of ['pairs', 'output']) $('show-' + panel).onchange = e => {
+  panelVisibility[panel] = e.target.checked;
+  try { localStorage.setItem(visibilityKey, JSON.stringify(panelVisibility)); } catch { /* The view still works without storage. */ }
+  applyPanelVisibility();
+};
+$('clear-selection').onclick = clearSelection; $('delete').onclick = deleteSelection;
+$('undo').onclick = () => history(true); $('redo').onclick = () => history(false);
+$('arrange').onclick = () => commit(arrange(model), 'Points arranged.', true);
+function keepParameters(next) { for (const key of ['m', 'n', 'lastM', 'lastN']) next[key] = model[key]; return next; }
+function clearPoset() { clearSelection(); const next = keepParameters(empty()); commit(next, 'Click empty space to add a point.', true); setTool('point'); }
+$('blank').onclick = clearPoset;
+$('delete-poset').onclick = clearPoset;
+$('add-first').onclick = () => { const v = views.input; addPoint(v.x + v.w / 2, v.y + v.h / 2); };
+$('examples').onchange = e => { if (!e.target.value) return; selected = null; const next = keepParameters(example(e.target.value)); commit(next, 'Example loaded.', true); e.target.value = ''; setTool('move'); };
+
+for (const key of ['m', 'n']) {
+  const remembered = key === 'm' ? 'lastM' : 'lastN';
+  $('all-' + key).onchange = e => {
+    const next = copy(model);
+    next[remembered] = model[key] ?? model[remembered] ?? 1;
+    next[key] = e.target.checked ? null : next[remembered];
+    commit(next, 'Chain size parameters updated.');
+  };
+  $('parameter-' + key).onchange = e => {
+    if ($('all-' + key).checked) return;
+    const raw = e.target.value.trim(), value = Number(raw);
+    if (!/^\d+$/.test(raw) || !Number.isSafeInteger(value)) {
+      e.target.setAttribute('aria-invalid', 'true'); status('Enter a nonnegative whole number, or select All.', true); return;
+    }
+    const next = copy(model); next[key] = value; next[remembered] = value;
+    commit(next, 'Chain size parameters updated.'); e.target.setAttribute('aria-invalid', 'false');
+  };
+}
+
+$('input-labels').onchange = () => { drawPanel('input'); refreshInteraction(); };
+$('pair-labels').onchange = () => { rebuild(); drawPanel('pairs'); drawPanel('output'); refreshInteraction(); fit('pairs'); fit('output'); };
+$('chain-labels').onchange = () => { rebuild(); drawPanel('output'); refreshInteraction(); fit('output'); };
+$('save').onclick = download; $('open').onclick = () => $('file').click();
+$('file').onchange = async e => {
+  const file = e.target.files[0]; if (!file) return;
+  try { if (file.size > 2_000_000) throw Error('Choose a file smaller than 2 MB.'); const next = validate(JSON.parse(await file.text())); selected = null; commit(next, 'Poset opened.', true); setTool('move'); }
+  catch (error) { status(error instanceof SyntaxError ? 'This file is not valid JSON.' : error.message, true); }
+  e.target.value = '';
+};
+window.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') { e.preventDefault(); download(); return; }
+  if (/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
+  if ((e.ctrlKey || e.metaKey) && ['z', 'y'].includes(e.key.toLowerCase())) { e.preventDefault(); history(e.key.toLowerCase() === 'z' && !e.shiftKey); return; }
+  if (e.key === 'Escape') { clearSelection(); return; }
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); deleteSelection(); }
+  const shortcuts = { v: 'move', n: 'point', e: 'order' }; if (shortcuts[e.key.toLowerCase()]) setTool(shortcuts[e.key.toLowerCase()]);
+});
+applyPanelVisibility(false); rebuild(); render(); setTool('move'); requestAnimationFrame(() => { fit('input'); fit('pairs'); fit('output'); });
+if (typeof ResizeObserver !== 'undefined') {
+  const observer = new ResizeObserver(resizeOutput); observer.observe(canvases.pairs); observer.observe(canvases.output);
+}
+else window.addEventListener('resize', resizeOutput);
+if (startupError) status(startupError, true);
+</script>
+</body></html>
