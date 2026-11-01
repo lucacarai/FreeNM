@@ -47,6 +47,8 @@ main{max-width:2000px;padding-left:24px;padding-right:24px}
 .construction-note .limit{font-size:10px}
 .canvas-wrap{height:clamp(430px,57vh,720px)}
 .point .half-fill{stroke:none;pointer-events:none}
+.chain-links{pointer-events:none}
+.chain-link{stroke:#000;stroke-width:2.4;stroke-linecap:butt;vector-effect:non-scaling-stroke;pointer-events:none}
 .point-backs{pointer-events:none}
 .point-back{fill:#fafbf7;stroke:none}
 .highlight-definitions{position:absolute;overflow:hidden;pointer-events:none}

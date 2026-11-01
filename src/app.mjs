@@ -216,6 +216,20 @@ function setHover(value) {
   if (hover?.panel === value?.panel && hover?.id === value?.id) return;
   hover = value; refreshInteraction();
 }
+function drawChainLinks(active) {
+  const layer = $('chain-links'); layer.replaceChildren();
+  if (active?.panel !== 'output' || !panelVisibility.pairs || pairs.exceeded) return;
+  const chain = outputNode(active.id)?.chain || [];
+  for (let i = 1; i < chain.length; i++) {
+    const a = pairNode(chain[i - 1]), b = pairNode(chain[i]);
+    if (!a || !b) continue;
+    const dx = b.x - a.x, dy = b.y - a.y, distance = Math.hypot(dx, dy);
+    if (!distance) continue;
+    // Draw above unrelated points, stopping at the chain endpoints' outlines.
+    const inset = Math.min(10.3, distance / 2), ux = dx / distance, uy = dy / distance;
+    layer.append(svgEl('line', { x1: a.x + ux * inset, y1: a.y + uy * inset, x2: b.x - ux * inset, y2: b.y - uy * inset, class: 'chain-link', 'data-a': a.id, 'data-b': b.id }));
+  }
+}
 function refreshInteraction() {
   const active = info(), inputs = new Set(), pairMembers = new Set(), outputPath = new Set();
   let minimum = null;
@@ -268,6 +282,7 @@ function refreshInteraction() {
   }
   $('clear-selection').disabled = !selected && !source;
   $('delete').disabled = !selected || selected.panel !== 'input';
+  drawChainLinks(active);
   drawInspector(active);
 }
 
@@ -441,7 +456,7 @@ async function downloadPng(panel) {
     const svg = canvases[panel], box = svg.querySelector('.points').getBBox();
     const bounds = { x: box.x - 30, y: box.y - 30, width: Math.ceil(box.width + 60), height: Math.ceil(box.height + 60) };
     const clone = svg.cloneNode(true); clone.setAttribute('xmlns', NS); clone.setAttribute('viewBox', `${bounds.x} ${bounds.y} ${bounds.width} ${bounds.height}`); clone.setAttribute('width', bounds.width); clone.setAttribute('height', bounds.height);
-    clone.querySelectorAll('defs, .canvas-bg, .point-backs, .hit, .ring, .minimum-ring, .edge-hit, #order-preview, title').forEach(n => n.remove());
+    clone.querySelectorAll('defs, .canvas-bg, .chain-links, .point-backs, .hit, .ring, .minimum-ring, .edge-hit, #order-preview, title').forEach(n => n.remove());
     clone.querySelectorAll('.point').forEach(n => n.setAttribute('class', 'point')); clone.querySelectorAll('.edge').forEach(n => n.setAttribute('class', 'edge'));
     const style = svgEl('style', {}, '.diagonal-halo{fill:#f9df78;fill-opacity:.30}.diagonal-outline{fill:none;stroke:#c4ad43;stroke-width:1.4}.half-fill{stroke:none}.edge{stroke:#80917a;stroke-width:1.8}.core{stroke:#536a50;stroke-width:1.6}.point text{font:italic 14px Georgia,serif;fill:#4e6549;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}');
     clone.prepend(style, svgEl('rect', { ...bounds, fill: '#ffffff' }));

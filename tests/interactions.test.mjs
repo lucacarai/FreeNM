@@ -4,6 +4,42 @@ import { launch } from './dom-harness.mjs';
 import { empty, example, nmConstruction } from '../src/core.mjs';
 const pid = (x, y) => JSON.stringify([x, y]);
 
+test('chain inspection draws consecutive black links even across skipped Hasse levels', async () => {
+  const { $, point, stored, resizePairs } = launch(example('chain3'));
+  const bottom = pid('p0', 'p2'), middle = pid('p0', 'p1'), top = pid('p0', 'p0');
+  const skipped = JSON.stringify([bottom, top]), full = JSON.stringify([bottom, middle, top]);
+  const before = stored(), originalEdges = $('pairs-canvas').querySelectorAll('.edge');
+  assert.ok(!originalEdges.some(q => q.dataset.a === bottom && q.dataset.b === top));
+  const links = () => $('chain-links').querySelectorAll('.chain-link');
+  const layers = Array.from($('pairs-canvas').children);
+  assert.ok(layers.indexOf($('chain-links')) > layers.indexOf($('pairs-canvas').querySelector('.points')));
+  const checkEndpoints = line => {
+    const coordinates = id => point('pairs', id).getAttribute('transform').match(/translate\(([^ ]+) ([^)]+)\)/).slice(1).map(Number);
+    const [x1, y1] = coordinates(line.dataset.a), [x2, y2] = coordinates(line.dataset.b);
+    const dx = x2 - x1, dy = y2 - y1, distance = Math.hypot(dx, dy);
+    const inset = Math.min(10.3, distance / 2);
+    assert.ok(Math.abs(Number(line.getAttribute('x1')) - (x1 + dx / distance * inset)) < 1e-9);
+    assert.ok(Math.abs(Number(line.getAttribute('y1')) - (y1 + dy / distance * inset)) < 1e-9);
+    assert.ok(Math.abs(Number(line.getAttribute('x2')) - (x2 - dx / distance * inset)) < 1e-9);
+    assert.ok(Math.abs(Number(line.getAttribute('y2')) - (y2 - dy / distance * inset)) < 1e-9);
+  };
+  await point('output', skipped).emit('pointerenter');
+  assert.equal(links().length, 1); assert.equal(links()[0].dataset.a, bottom); assert.equal(links()[0].dataset.b, top);
+  checkEndpoints(links()[0]);
+  assert.equal($('pairs-canvas').querySelectorAll('.edge').length, originalEdges.length);
+  assert.deepEqual(stored(), before);
+  await point('output', skipped).emit('keydown', { key: 'Enter' });
+  resizePairs(300, 500); assert.equal(links().length, 1); checkEndpoints(links()[0]);
+  await point('input', 'p1').emit('pointerenter'); assert.equal(links().length, 0);
+  await point('input', 'p1').emit('pointerleave'); assert.equal(links().length, 1);
+  await point('output', full).emit('pointerenter');
+  assert.equal(links().length, 2);
+  assert.deepEqual(links().map(q => [q.dataset.a, q.dataset.b]), [[bottom, middle], [middle, top]]);
+  await point('output', JSON.stringify([top])).emit('pointerenter'); assert.equal(links().length, 0);
+  await point('output', JSON.stringify([top])).emit('pointerleave'); assert.equal(links().length, 1);
+  await $('clear-selection').emit('click'); assert.equal(links().length, 0);
+});
+
 test('computed panels hide independently, retain the drawing and parameters, and remember visibility on reload', async () => {
   const input = { ...example('chain3'), m: 1, n: 2 }, { $, stored, visibilitySettings } = launch(input);
   const before = stored();

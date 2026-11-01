@@ -49,6 +49,8 @@ main{max-width:2000px;padding-left:24px;padding-right:24px}
 .construction-note .limit{font-size:10px}
 .canvas-wrap{height:clamp(430px,57vh,720px)}
 .point .half-fill{stroke:none;pointer-events:none}
+.chain-links{pointer-events:none}
+.chain-link{stroke:#000;stroke-width:2.4;stroke-linecap:butt;vector-effect:non-scaling-stroke;pointer-events:none}
 .point-backs{pointer-events:none}
 .point-back{fill:#fafbf7;stroke:none}
 .highlight-definitions{position:absolute;overflow:hidden;pointer-events:none}
@@ -96,7 +98,7 @@ main{max-width:2000px;padding-left:24px;padding-right:24px}
     <section id="pairs-panel" class="panel pairs-panel" aria-label="Comparable pair poset">
       <div class="panel-heading"><div><h2 class="formula"><span class="math-term">(<math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>X</mi><mo>≤</mo></msup></math>, <math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>X</mi><mo>=</mo></msup></math>)</span></h2><span id="pairs-count" class="element-count" aria-live="polite"></span></div></div>
       <div class="panel-tools construction-note" aria-hidden="true"></div>
-      <div class="canvas-wrap"><svg id="pairs-canvas" viewBox="0 0 500 500" role="group" aria-label="Hasse diagram of comparable pairs"><rect class="canvas-bg" x="-200000" y="-200000" width="400000" height="400000" fill="#fafbf7"/><g class="edges"></g><g class="point-backs" aria-hidden="true"></g><g class="points"></g></svg><div id="pairs-notice" class="empty" hidden><p id="pairs-message"></p></div></div>
+      <div class="canvas-wrap"><svg id="pairs-canvas" viewBox="0 0 500 500" role="group" aria-label="Hasse diagram of comparable pairs"><rect class="canvas-bg" x="-200000" y="-200000" width="400000" height="400000" fill="#fafbf7"/><g class="edges"></g><g class="point-backs" aria-hidden="true"></g><g class="points"></g><g id="chain-links" class="chain-links" aria-hidden="true"></g></svg><div id="pairs-notice" class="empty" hidden><p id="pairs-message"></p></div></div>
       <div class="canvas-controls"><label><input id="pair-labels" type="checkbox"> Pair labels</label><div class="zoom" aria-label="Pair poset zoom"><button data-zoom="pairs:out" aria-label="Zoom pairs out">−</button><button data-fit="pairs">Fit</button><button data-zoom="pairs:in" aria-label="Zoom pairs in">+</button></div><button data-export="pairs" title="Save pair diagram as PNG">PNG</button></div>
     </section>
     <section id="output-panel" class="panel output-panel" aria-label="Chain poset">
@@ -768,6 +770,20 @@ function setHover(value) {
   if (hover?.panel === value?.panel && hover?.id === value?.id) return;
   hover = value; refreshInteraction();
 }
+function drawChainLinks(active) {
+  const layer = $('chain-links'); layer.replaceChildren();
+  if (active?.panel !== 'output' || !panelVisibility.pairs || pairs.exceeded) return;
+  const chain = outputNode(active.id)?.chain || [];
+  for (let i = 1; i < chain.length; i++) {
+    const a = pairNode(chain[i - 1]), b = pairNode(chain[i]);
+    if (!a || !b) continue;
+    const dx = b.x - a.x, dy = b.y - a.y, distance = Math.hypot(dx, dy);
+    if (!distance) continue;
+    // Draw above unrelated points, stopping at the chain endpoints' outlines.
+    const inset = Math.min(10.3, distance / 2), ux = dx / distance, uy = dy / distance;
+    layer.append(svgEl('line', { x1: a.x + ux * inset, y1: a.y + uy * inset, x2: b.x - ux * inset, y2: b.y - uy * inset, class: 'chain-link', 'data-a': a.id, 'data-b': b.id }));
+  }
+}
 function refreshInteraction() {
   const active = info(), inputs = new Set(), pairMembers = new Set(), outputPath = new Set();
   let minimum = null;
@@ -820,6 +836,7 @@ function refreshInteraction() {
   }
   $('clear-selection').disabled = !selected && !source;
   $('delete').disabled = !selected || selected.panel !== 'input';
+  drawChainLinks(active);
   drawInspector(active);
 }
 
@@ -993,7 +1010,7 @@ async function downloadPng(panel) {
     const svg = canvases[panel], box = svg.querySelector('.points').getBBox();
     const bounds = { x: box.x - 30, y: box.y - 30, width: Math.ceil(box.width + 60), height: Math.ceil(box.height + 60) };
     const clone = svg.cloneNode(true); clone.setAttribute('xmlns', NS); clone.setAttribute('viewBox', `${bounds.x} ${bounds.y} ${bounds.width} ${bounds.height}`); clone.setAttribute('width', bounds.width); clone.setAttribute('height', bounds.height);
-    clone.querySelectorAll('defs, .canvas-bg, .point-backs, .hit, .ring, .minimum-ring, .edge-hit, #order-preview, title').forEach(n => n.remove());
+    clone.querySelectorAll('defs, .canvas-bg, .chain-links, .point-backs, .hit, .ring, .minimum-ring, .edge-hit, #order-preview, title').forEach(n => n.remove());
     clone.querySelectorAll('.point').forEach(n => n.setAttribute('class', 'point')); clone.querySelectorAll('.edge').forEach(n => n.setAttribute('class', 'edge'));
     const style = svgEl('style', {}, '.diagonal-halo{fill:#f9df78;fill-opacity:.30}.diagonal-outline{fill:none;stroke:#c4ad43;stroke-width:1.4}.half-fill{stroke:none}.edge{stroke:#80917a;stroke-width:1.8}.core{stroke:#536a50;stroke-width:1.6}.point text{font:italic 14px Georgia,serif;fill:#4e6549;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}');
     clone.prepend(style, svgEl('rect', { ...bounds, fill: '#ffffff' }));
