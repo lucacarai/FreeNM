@@ -1,4 +1,4 @@
-# Free NM algebras dually
+# Free NM-algebras dually
 
 An interactive three-stage visualization of the dual construction of the free nilpotent minimum algebra over a finite bounded distributive lattice. The editable input is the lattice's dual finite poset X. The editor and coloring follow FreeGodel.
 
