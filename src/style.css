@@ -60,6 +60,7 @@ main{max-width:2000px;padding-left:24px;padding-right:24px}
 .diagonal-halo{fill:#f9df78;fill-opacity:.30;pointer-events:none}
 .diagonal-outline{fill:none;stroke:#c4ad43;stroke-width:1.4;pointer-events:none}
 .point.dim{opacity:.68}
+.self-inspection .point.dim .ring{opacity:0}
 .edge.dim{opacity:.5}
 .empty.limit-error{background:#fafbf7ed;color:#98513f}
 .diagonal-key{display:flex;align-items:center;gap:7px}

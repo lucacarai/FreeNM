@@ -231,7 +231,7 @@ function drawChainLinks(active) {
   }
 }
 function refreshInteraction() {
-  const active = info(), inputs = new Set(), pairMembers = new Set(), outputPath = new Set();
+  const active = info(), inputs = new Set(), pairMembers = new Set();
   let minimum = null;
   if (active?.panel === 'input' && inputNode(active.id)) {
     inputs.add(active.id);
@@ -240,7 +240,7 @@ function refreshInteraction() {
   if (active?.panel === 'pairs' && pairNode(active.id)) pairMembers.add(active.id);
   if (active?.panel === 'output') {
     const chain = outputNode(active.id)?.chain;
-    if (chain) { chain.forEach(id => pairMembers.add(id)); minimum = chain[0]; for (let i = 0; i < chain.length; i++) outputPath.add(JSON.stringify(chain.slice(i))); }
+    if (chain) { chain.forEach(id => pairMembers.add(id)); minimum = chain[0]; }
   }
   if (active?.panel === 'output') {
     const pair = pairNode(minimum);
@@ -251,18 +251,19 @@ function refreshInteraction() {
   const relatedTo = (panel, id) => {
     if (panel === 'input') return inputs.has(id);
     if (panel === 'pairs') return pairMembers.has(id);
-    if (active?.panel === 'output') return outputPath.has(id);
+    if (active?.panel === 'output') return id === active.id;
     const node = outputNode(id);
     if (active?.panel === 'pairs') return node?.minimum === active.id;
     return pairMembers.has(node?.minimum);
   };
   for (const [panel, svg] of Object.entries(canvases)) {
+    svg.classList.toggle('self-inspection', panel === 'output' && active?.panel === 'output');
     for (const g of svg.querySelectorAll('.point')) {
       const id = g.dataset.id;
       g.classList.toggle('related', !!active && !!relatedTo(panel, id));
       g.classList.toggle('dim', !!active && !relatedTo(panel, id));
       g.classList.toggle('minimum', panel === 'pairs' && !!active && id === minimum);
-      g.classList.toggle('pinned', selected?.panel === panel && selected.id === id);
+      g.classList.toggle('pinned', selected?.panel === panel && selected.id === id && !(panel === 'output' && active?.panel === 'output' && active.id !== id));
       g.classList.toggle('source', panel === 'input' && source === id);
       // Clip the existing circle instead of joining independently drawn arcs.
       const coordinateInspection = active?.panel === 'input' && panel !== 'input';

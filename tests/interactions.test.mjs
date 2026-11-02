@@ -33,6 +33,10 @@ test('chain inspection draws consecutive black links even across skipped Hasse l
   await point('input', 'p1').emit('pointerenter'); assert.equal(links().length, 0);
   await point('input', 'p1').emit('pointerleave'); assert.equal(links().length, 1);
   await point('output', full).emit('pointerenter');
+  assert.equal($('output-canvas').querySelectorAll('.related').length, 1);
+  assert.ok(point('output', full).classList.contains('related'));
+  assert.ok(!point('output', skipped).classList.contains('pinned'));
+  assert.equal($('output-canvas').querySelectorAll('.active').length, 0);
   assert.equal(links().length, 2);
   assert.deepEqual(links().map(q => [q.dataset.a, q.dataset.b]), [[bottom, middle], [middle, top]]);
   await point('output', JSON.stringify([top])).emit('pointerenter'); assert.equal(links().length, 0);
