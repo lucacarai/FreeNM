@@ -93,7 +93,7 @@ main{max-width:2000px;padding-left:24px;padding-right:24px}
       <div class="panel-heading"><div><h1>Input <span class="math">X</span></h1><span id="input-count" class="count"></span></div><div class="panel-actions"><button id="delete-poset" class="delete">Delete poset</button><button id="arrange">Arrange</button></div></div>
       <div class="panel-tools"><div class="tools" role="toolbar" aria-label="Drawing tools"><button data-tool="move" aria-pressed="true" title="Move (V)">Move <kbd>V</kbd></button><button data-tool="point" aria-pressed="false" title="Point (N)">+ Point <kbd>N</kbd></button><button data-tool="order" aria-pressed="false" title="Order (E)">Order <kbd>E</kbd></button></div></div>
       <div class="canvas-wrap"><svg id="input-canvas" viewBox="0 0 500 500" role="group" aria-label="Editable input Hasse diagram"><defs><pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#dce2d8"/></pattern></defs><rect class="canvas-bg" x="-200000" y="-200000" width="400000" height="400000" fill="url(#grid)"/><g class="edges"></g><g class="point-backs" aria-hidden="true"></g><g class="points"></g><g id="order-preview" pointer-events="none"></g></svg><div id="input-empty" class="empty" hidden><button id="add-first">+ Add a point</button></div></div>
-      <div class="canvas-controls"><label><input id="snap" type="checkbox"> Snap</label><label><input id="input-labels" type="checkbox" checked> Labels</label><div class="zoom" aria-label="Input zoom"><button data-zoom="input:out" aria-label="Zoom input out">−</button><button data-fit="input">Fit</button><button data-zoom="input:in" aria-label="Zoom input in">+</button></div><button data-export="input" title="Save input diagram as PNG">PNG</button></div>
+      <div class="canvas-controls"><label><input id="snap" type="checkbox"> Snap</label><label><input id="input-labels" type="checkbox"> Labels</label><div class="zoom" aria-label="Input zoom"><button data-zoom="input:out" aria-label="Zoom input out">−</button><button data-fit="input">Fit</button><button data-zoom="input:in" aria-label="Zoom input in">+</button></div><button data-export="input" title="Save input diagram as PNG">PNG</button></div>
     </section>
     <section id="pairs-panel" class="panel pairs-panel" aria-label="Comparable pair poset">
       <div class="panel-heading"><div><h2 class="formula"><span class="math-term">(<math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>X</mi><mo>≤</mo></msup></math>, <math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>X</mi><mo>=</mo></msup></math>)</span></h2><span id="pairs-count" class="element-count" aria-live="polite"></span></div></div>
@@ -827,11 +827,11 @@ function refreshInteraction() {
     }
     for (const line of svg.querySelectorAll('.edge')) {
       const a = line.dataset.a, b = line.dataset.b, related = relatedTo(panel, a) && relatedTo(panel, b);
-      const inputFromOutput = active?.panel === 'output' && panel === 'input';
-      const highlightEdges = !!active && !(active.panel === 'input' && panel !== 'input') && !inputFromOutput;
-      line.classList.toggle('dim', active?.panel === 'input' || inputFromOutput || (highlightEdges && !related));
+      const inputFromComputed = panel === 'input' && (active?.panel === 'pairs' || active?.panel === 'output');
+      const highlightEdges = !!active && !(active.panel === 'input' && panel !== 'input') && !inputFromComputed;
+      line.classList.toggle('dim', active?.panel === 'input' || inputFromComputed || (highlightEdges && !related));
       line.classList.toggle('active', highlightEdges && !!related);
-      line.classList.toggle('selected', panel === 'input' && !inputFromOutput && selected?.type === 'edge' && selected.a === a && selected.b === b);
+      line.classList.toggle('selected', panel === 'input' && !inputFromComputed && selected?.type === 'edge' && selected.a === a && selected.b === b);
     }
   }
   $('clear-selection').disabled = !selected && !source;

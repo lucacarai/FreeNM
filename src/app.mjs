@@ -273,11 +273,11 @@ function refreshInteraction() {
     }
     for (const line of svg.querySelectorAll('.edge')) {
       const a = line.dataset.a, b = line.dataset.b, related = relatedTo(panel, a) && relatedTo(panel, b);
-      const inputFromOutput = active?.panel === 'output' && panel === 'input';
-      const highlightEdges = !!active && !(active.panel === 'input' && panel !== 'input') && !inputFromOutput;
-      line.classList.toggle('dim', active?.panel === 'input' || inputFromOutput || (highlightEdges && !related));
+      const inputFromComputed = panel === 'input' && (active?.panel === 'pairs' || active?.panel === 'output');
+      const highlightEdges = !!active && !(active.panel === 'input' && panel !== 'input') && !inputFromComputed;
+      line.classList.toggle('dim', active?.panel === 'input' || inputFromComputed || (highlightEdges && !related));
       line.classList.toggle('active', highlightEdges && !!related);
-      line.classList.toggle('selected', panel === 'input' && !inputFromOutput && selected?.type === 'edge' && selected.a === a && selected.b === b);
+      line.classList.toggle('selected', panel === 'input' && !inputFromComputed && selected?.type === 'edge' && selected.a === a && selected.b === b);
     }
   }
   $('clear-selection').disabled = !selected && !source;

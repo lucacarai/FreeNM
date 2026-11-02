@@ -123,6 +123,10 @@ test('hover and pin inspection links chains, pairs, and original coordinates', a
   assert.ok(point('output', JSON.stringify([diagonal])).classList.contains('related'));
   assert.equal($('output-canvas').querySelectorAll('.related').length, 1);
   await point('pairs', lower).emit('pointerenter');
+  for (const edge of $('input-canvas').querySelectorAll('.edge')) {
+    assert.ok(edge.classList.contains('dim'));
+    assert.ok(!edge.classList.contains('active')); assert.ok(!edge.classList.contains('selected'));
+  }
   assert.equal($('output-canvas').querySelectorAll('.related').length, 3);
   assert.ok(point('output', chainId).classList.contains('related'));
   assert.ok(point('output', JSON.stringify([diagonal])).classList.contains('dim'));
